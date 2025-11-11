@@ -2,19 +2,27 @@
 I used data from FBREF to analyse player data from the 2025-2026 premier league season. All the maths is done using only numpy to encourage full understanding (no scipy/scikit learn). AI was used to help with frontend implementation, all maths was implemented by me.
 
 # Prerequisites
+```bash
 pip install -r requirements.txt
+```
 
 # Loading in the data
+```bash
 python src/data_loader.py
+```
 
 # Running the app locally
+```bash
 python src/data_loader.py
 python src/preprocessing.py
 python src/clustering.py
 streamlit run app/streamlit_app.py
+```
 
 # Pre-processing
+```bash
 python src/preprocessing.py
+```
 
 ## Picking Features
 We drop 1/2 of any features that have a pairwise correlation of over 0.95. We use Pearson correlation coefficiants for this.
@@ -27,12 +35,16 @@ We drop 1/2 of any features that have a pairwise correlation of over 0.95. We us
 2. EQUAL WEIGHTING: Standardization ensures each feature contributes equally to similarity. A 'high' value in goals means the same relative thing as a 'high' value in passes (both are ~2 standard deviations above average). Maybe this is something I can look at changing in future to weigh more 'important' contributions?
 
 # Similarity
+```bash
 python src/similarity.py
+```
 
 Computed simply using cosine similarity with normalised values. Maybe I can do something more complex in future to get better values but works for now.
 
 # Clustering
+```bash
 python src/clustering.py
+```
 
 ## PCA (Principal Component Analysis)
 1. DIMENSIONALITY REDUCTION: With 158 features, visualizing players is impossible. PCA reduces this to 2D for visualization while preserving as much variance as possible.
@@ -46,7 +58,9 @@ python src/clustering.py
 4. MINIMIZING INERTIA: The algorithm minimizes within-cluster sum of squares (inertia) - lower inertia means tighter, more similar clusters. Maybe I can experiment with different numbers of clusters per position or use other metrics like silhouette score in future.
 
 # Visuals
+```bash
 python -c "from visuals import league_scatter, player_radar_chart, team_profile_heatmap"
+```
 
 ## What do the visuals cover?
 1. PCA MAP: `league_scatter` draws the 2D projection and keeps hover details light so you can scan clusters quickly. Pass in the dataframe returned from preprocessing/clustering with `pc1`, `pc2`, and metadata columns.
@@ -55,7 +69,9 @@ python -c "from visuals import league_scatter, player_radar_chart, team_profile_
 4. PERFORMANCE: All helpers only depend on numpy/pandas/plotly and avoid extra copies, so you can reuse the same figures in notebooks or Streamlit without reloading data.
 
 # Streamlit App
+```bash
 streamlit run app/streamlit_app.py
+```
 
 ## What does the app include?
 1. LOADS FROM CACHE: `PlayerVectorStore`, PCA projection, and clustering artefacts are cached with `st.cache_resource`/`st.cache_data`, so reruns stay fast even with large tables.
