@@ -1,0 +1,23 @@
+TEAM_COLORS = {
+    'Arsenal': '#EF0107',  
+    'Aston Villa': '#95BFE5',  
+    'Bournemouth': '#DA020E',  
+    'Brentford': '#E30613',  
+    'Brighton': '#0057B8',  
+    'Burnley': '#6C1D45',  
+    'Chelsea': '#034694',  
+    'Crystal Palace': '#1B458F',  
+    'Everton': '#003399',  
+    'Fulham': '#000000',
+    'Leeds United': '#1D428A',  
+    'Liverpool': '#C8102E',  
+    'Manchester City': '#6CABDD',
+    'Manchester Utd': '#DA020E',  
+    'Newcastle Utd': '#241F20',
+    "Nott'ham Forest": '#DD0000',  
+    'Sunderland': '#EB172B',  
+    'Tottenham': '#132257',
+    'West Ham': '#7A263A',  
+    'Wolves': '#FDB913',
+}
+

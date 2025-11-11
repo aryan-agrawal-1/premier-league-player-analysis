@@ -1,0 +1,8 @@
+soccerdata
+pandas
+numpy
+plotly
+pyarrow
+pyyaml
+streamlit
+
