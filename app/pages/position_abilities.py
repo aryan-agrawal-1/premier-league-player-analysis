@@ -21,6 +21,7 @@ if str(SRC_DIR) not in sys.path:
 from similarity import PlayerVectorStore
 from abilities import build_ability_dataframe
 from team_colors import TEAM_COLORS
+from visuals import plotly_config
 
 
 st.set_page_config(page_title='Positional Abilities', layout='wide', page_icon='⚽')
@@ -315,7 +316,8 @@ def render_position_tab(df, position, ability1_name, ability1_col, ability2_name
             hover_cols=['player', 'team'],
             full_df=axis_data
         ),
-        width='stretch'
+        width='stretch',
+        config=plotly_config()
     )
     
     st.write('---')
@@ -330,7 +332,8 @@ def render_position_tab(df, position, ability1_name, ability1_col, ability2_name
                 top_n=10,
                 title=f'Top {ability1_name}'
             ),
-            width='stretch'
+            width='stretch',
+            config=plotly_config()
         )
     
     with col4:
@@ -341,7 +344,8 @@ def render_position_tab(df, position, ability1_name, ability1_col, ability2_name
                 top_n=10,
                 title=f'Top {ability2_name}'
             ),
-            width='stretch'
+            width='stretch',
+            config=plotly_config()
         )
 
 

@@ -19,7 +19,7 @@ if str(SRC_DIR) not in sys.path:
 
 from similarity import PlayerVectorStore
 from clustering import load_pca_results, load_clustering_results
-from visuals import league_scatter, player_radar_chart
+from visuals import league_scatter, player_radar_chart, plotly_config
 
 
 st.set_page_config(page_title='Premier League Data', layout='wide', page_icon='⚽')
@@ -294,7 +294,7 @@ def create_panel(title, description, preview_fig, page_path):
         st.markdown(description)
 
         if preview_fig:
-            st.plotly_chart(preview_fig, width='stretch', config={'displayModeBar': False})
+            st.plotly_chart(preview_fig, width='stretch', config=plotly_config({'displayModeBar': False}))
         else:
             st.info("Preview unavailable")
 

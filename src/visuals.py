@@ -6,9 +6,24 @@ import plotly.graph_objects as go
 
 from team_colors import TEAM_COLORS
 
+PLOTLY_BASE_CONFIG = {
+    # Keep charts responsive inside Streamlit containers and drop the Plotly watermark
+    'responsive': True,
+    'displaylogo': False,
+}
+
+
+def plotly_config(overrides=None):
+    cfg = dict(PLOTLY_BASE_CONFIG)
+    if overrides:
+        cfg.update(overrides)
+    return cfg
+
+
 __all__ = [
     'league_scatter',
     'player_radar_chart',
+    'plotly_config',
 ]
 
 

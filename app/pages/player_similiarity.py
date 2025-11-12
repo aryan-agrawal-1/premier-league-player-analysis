@@ -13,7 +13,7 @@ from streamlit_app import (
     load_cluster_table,
     load_raw_player_vectors,
 )
-from visuals import player_radar_chart
+from visuals import player_radar_chart, plotly_config
 
 
 def pick_radar_features(store_df, feature_cols, player_idx, comparison_series, limit=8):
@@ -194,7 +194,7 @@ def main():
             comparison_hover_values=comparison_raw_values,
             hover_precision=2,
         )
-        st.plotly_chart(radar_fig, width='stretch')
+        st.plotly_chart(radar_fig, width='stretch', config=plotly_config())
 
     st.write('---')
 

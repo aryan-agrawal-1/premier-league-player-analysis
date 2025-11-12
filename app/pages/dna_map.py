@@ -19,7 +19,7 @@ if str(SRC_DIR) not in sys.path:
 
 from similarity import PlayerVectorStore
 from clustering import load_pca_results, load_clustering_results
-from visuals import league_scatter
+from visuals import league_scatter, plotly_config
 
 
 st.set_page_config(page_title='Player DNA Map', layout='wide')
@@ -197,7 +197,7 @@ def render_league_map_tab(store, store_df, projection_df, pca_components, axis_m
             y_label=y_axis_label,
             full_data=axis_data
         )
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, width='stretch', config=plotly_config())
         if axis_notes:
             st.caption(' | '.join(axis_notes))
 
