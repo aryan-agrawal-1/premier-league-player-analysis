@@ -1,6 +1,5 @@
 *.pyc
 __pycache__/
-data/
 src/.env
 .cursor/
 .DS_Store

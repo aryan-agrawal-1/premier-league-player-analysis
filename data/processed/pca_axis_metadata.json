@@ -1,0 +1,178 @@
+{
+  "Attacker": [
+    {
+      "component": 1,
+      "features": [
+        {
+          "name": "Carries_Carries",
+          "weight": 0.11463948933002731
+        },
+        {
+          "name": "Att",
+          "weight": 0.11421755344775264
+        },
+        {
+          "name": "Total_Att",
+          "weight": 0.11421755344775264
+        },
+        {
+          "name": "Outcomes_Cmp",
+          "weight": 0.11377966086555688
+        }
+      ]
+    },
+    {
+      "component": 2,
+      "features": [
+        {
+          "name": "Expected_xG",
+          "weight": 0.1431891421157246
+        },
+        {
+          "name": "Standard_Gls",
+          "weight": 0.13930086720555615
+        },
+        {
+          "name": "Performance_Gls",
+          "weight": 0.13930086720555598
+        },
+        {
+          "name": "Expected_npxG",
+          "weight": 0.1391779739880068
+        }
+      ]
+    }
+  ],
+  "Defender": [
+    {
+      "component": 1,
+      "features": [
+        {
+          "name": "SCA_SCA",
+          "weight": 0.1210461969962421
+        },
+        {
+          "name": "SCA Types_PassLive",
+          "weight": 0.11705121638616665
+        },
+        {
+          "name": "Touches_Att 3rd",
+          "weight": 0.11614389297020082
+        },
+        {
+          "name": "Expected_npxG+xAG",
+          "weight": 0.11128855925574542
+        }
+      ]
+    },
+    {
+      "component": 2,
+      "features": [
+        {
+          "name": "Medium_Cmp",
+          "weight": 0.1406633916616285
+        },
+        {
+          "name": "Touches_Def 3rd",
+          "weight": 0.13629910165207593
+        },
+        {
+          "name": "Medium_Att",
+          "weight": 0.1356298432284607
+        },
+        {
+          "name": "Total_TotDist",
+          "weight": 0.13473096587129013
+        }
+      ]
+    }
+  ],
+  "Keeper": [
+    {
+      "component": 1,
+      "features": [
+        {
+          "name": "Att",
+          "weight": 0.1537259418941469
+        },
+        {
+          "name": "Total_Att",
+          "weight": 0.1537259418941469
+        },
+        {
+          "name": "Touches_Touches",
+          "weight": 0.15363038804381215
+        },
+        {
+          "name": "Touches_Live",
+          "weight": 0.15363038804381215
+        }
+      ]
+    },
+    {
+      "component": 2,
+      "features": [
+        {
+          "name": "Outcomes_Cmp_per90",
+          "weight": 0.15929948201877042
+        },
+        {
+          "name": "Total_Cmp_per90",
+          "weight": 0.15929948201877037
+        },
+        {
+          "name": "Medium_Att_per90",
+          "weight": 0.14888163472480062
+        },
+        {
+          "name": "Medium_Cmp_per90",
+          "weight": 0.14855804427761762
+        }
+      ]
+    }
+  ],
+  "Midfielder": [
+    {
+      "component": 1,
+      "features": [
+        {
+          "name": "Touches_Touches",
+          "weight": 0.13300557288864098
+        },
+        {
+          "name": "Touches_Live",
+          "weight": 0.13299338118448467
+        },
+        {
+          "name": "Att",
+          "weight": 0.13202579852123938
+        },
+        {
+          "name": "Total_Att",
+          "weight": 0.13202579852123936
+        }
+      ]
+    },
+    {
+      "component": 2,
+      "features": [
+        {
+          "name": "Touches_Att Pen_per90",
+          "weight": 0.12162980218070227
+        },
+        {
+          "name": "Per 90 Minutes_npxG+xAG",
+          "weight": 0.11912569483058004
+        },
+        {
+          "name": "Touches_Att Pen",
+          "weight": 0.11841851382247467
+        },
+        {
+          "name": "Expected_npxG+xAG_per90",
+          "weight": 0.11829471702292807
+        }
+      ]
+    }
+  ]
+}

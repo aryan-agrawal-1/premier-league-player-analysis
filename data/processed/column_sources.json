@@ -1,0 +1,684 @@
+{
+  "league": [
+    "standard"
+  ],
+  "season": [
+    "standard"
+  ],
+  "team": [
+    "standard"
+  ],
+  "player": [
+    "standard"
+  ],
+  "nation": [
+    "standard"
+  ],
+  "pos": [
+    "standard"
+  ],
+  "age": [
+    "standard"
+  ],
+  "born": [
+    "standard"
+  ],
+  "Playing Time_MP": [
+    "playing_time",
+    "standard"
+  ],
+  "Playing Time_Starts": [
+    "standard"
+  ],
+  "Playing Time_Min": [
+    "playing_time",
+    "standard"
+  ],
+  "Playing Time_90s": [
+    "playing_time",
+    "standard"
+  ],
+  "Performance_Gls": [
+    "standard"
+  ],
+  "Performance_Ast": [
+    "standard"
+  ],
+  "Performance_G+A": [
+    "standard"
+  ],
+  "Performance_G-PK": [
+    "standard"
+  ],
+  "Performance_PK": [
+    "standard"
+  ],
+  "Performance_PKatt": [
+    "standard"
+  ],
+  "Performance_CrdY": [
+    "misc",
+    "standard"
+  ],
+  "Performance_CrdR": [
+    "misc",
+    "standard"
+  ],
+  "Expected_xG": [
+    "shooting",
+    "standard"
+  ],
+  "Expected_npxG": [
+    "shooting",
+    "standard"
+  ],
+  "Expected_xAG": [
+    "standard"
+  ],
+  "Expected_npxG+xAG": [
+    "standard"
+  ],
+  "Progression_PrgC": [
+    "standard"
+  ],
+  "Progression_PrgP": [
+    "standard"
+  ],
+  "Progression_PrgR": [
+    "standard"
+  ],
+  "Per 90 Minutes_Gls": [
+    "standard"
+  ],
+  "Per 90 Minutes_Ast": [
+    "standard"
+  ],
+  "Per 90 Minutes_G+A": [
+    "standard"
+  ],
+  "Per 90 Minutes_G-PK": [
+    "standard"
+  ],
+  "Per 90 Minutes_G+A-PK": [
+    "standard"
+  ],
+  "Per 90 Minutes_xG": [
+    "standard"
+  ],
+  "Per 90 Minutes_xAG": [
+    "standard"
+  ],
+  "Per 90 Minutes_xG+xAG": [
+    "standard"
+  ],
+  "Per 90 Minutes_npxG": [
+    "standard"
+  ],
+  "Per 90 Minutes_npxG+xAG": [
+    "standard"
+  ],
+  "90s": [
+    "defense",
+    "goal_shot_creation",
+    "misc",
+    "passing",
+    "passing_types",
+    "possession",
+    "shooting"
+  ],
+  "Standard_Gls": [
+    "shooting"
+  ],
+  "Standard_Sh": [
+    "shooting"
+  ],
+  "Standard_SoT": [
+    "shooting"
+  ],
+  "Standard_SoT%": [
+    "shooting"
+  ],
+  "Standard_Sh/90": [
+    "shooting"
+  ],
+  "Standard_SoT/90": [
+    "shooting"
+  ],
+  "Standard_G/Sh": [
+    "shooting"
+  ],
+  "Standard_G/SoT": [
+    "shooting"
+  ],
+  "Standard_Dist": [
+    "shooting"
+  ],
+  "Standard_FK": [
+    "shooting"
+  ],
+  "Standard_PK": [
+    "shooting"
+  ],
+  "Standard_PKatt": [
+    "shooting"
+  ],
+  "Expected_npxG/Sh": [
+    "shooting"
+  ],
+  "Expected_G-xG": [
+    "shooting"
+  ],
+  "Expected_np:G-xG": [
+    "shooting"
+  ],
+  "Total_Cmp": [
+    "passing"
+  ],
+  "Total_Att": [
+    "passing"
+  ],
+  "Total_Cmp%": [
+    "passing"
+  ],
+  "Total_TotDist": [
+    "passing"
+  ],
+  "Total_PrgDist": [
+    "passing"
+  ],
+  "Short_Cmp": [
+    "passing"
+  ],
+  "Short_Att": [
+    "passing"
+  ],
+  "Short_Cmp%": [
+    "passing"
+  ],
+  "Medium_Cmp": [
+    "passing"
+  ],
+  "Medium_Att": [
+    "passing"
+  ],
+  "Medium_Cmp%": [
+    "passing"
+  ],
+  "Long_Cmp": [
+    "passing"
+  ],
+  "Long_Att": [
+    "passing"
+  ],
+  "Long_Cmp%": [
+    "passing"
+  ],
+  "Ast": [
+    "passing"
+  ],
+  "xAG": [
+    "passing"
+  ],
+  "Expected_xA": [
+    "passing"
+  ],
+  "Expected_A-xAG": [
+    "passing"
+  ],
+  "KP": [
+    "passing"
+  ],
+  "1/3": [
+    "passing"
+  ],
+  "PPA": [
+    "passing"
+  ],
+  "CrsPA": [
+    "passing"
+  ],
+  "PrgP": [
+    "passing"
+  ],
+  "Att": [
+    "passing_types"
+  ],
+  "Pass Types_Live": [
+    "passing_types"
+  ],
+  "Pass Types_Dead": [
+    "passing_types"
+  ],
+  "Pass Types_FK": [
+    "passing_types"
+  ],
+  "Pass Types_TB": [
+    "passing_types"
+  ],
+  "Pass Types_Sw": [
+    "passing_types"
+  ],
+  "Pass Types_Crs": [
+    "passing_types"
+  ],
+  "Pass Types_TI": [
+    "passing_types"
+  ],
+  "Pass Types_CK": [
+    "passing_types"
+  ],
+  "Corner Kicks_In": [
+    "passing_types"
+  ],
+  "Corner Kicks_Out": [
+    "passing_types"
+  ],
+  "Corner Kicks_Str": [
+    "passing_types"
+  ],
+  "Outcomes_Cmp": [
+    "passing_types"
+  ],
+  "Outcomes_Off": [
+    "passing_types"
+  ],
+  "Outcomes_Blocks": [
+    "passing_types"
+  ],
+  "SCA_SCA": [
+    "goal_shot_creation"
+  ],
+  "SCA_SCA90": [
+    "goal_shot_creation"
+  ],
+  "SCA Types_PassLive": [
+    "goal_shot_creation"
+  ],
+  "SCA Types_PassDead": [
+    "goal_shot_creation"
+  ],
+  "SCA Types_TO": [
+    "goal_shot_creation"
+  ],
+  "SCA Types_Sh": [
+    "goal_shot_creation"
+  ],
+  "SCA Types_Fld": [
+    "goal_shot_creation"
+  ],
+  "SCA Types_Def": [
+    "goal_shot_creation"
+  ],
+  "GCA_GCA": [
+    "goal_shot_creation"
+  ],
+  "GCA_GCA90": [
+    "goal_shot_creation"
+  ],
+  "GCA Types_PassLive": [
+    "goal_shot_creation"
+  ],
+  "GCA Types_PassDead": [
+    "goal_shot_creation"
+  ],
+  "GCA Types_TO": [
+    "goal_shot_creation"
+  ],
+  "GCA Types_Sh": [
+    "goal_shot_creation"
+  ],
+  "GCA Types_Fld": [
+    "goal_shot_creation"
+  ],
+  "GCA Types_Def": [
+    "goal_shot_creation"
+  ],
+  "Tackles_Tkl": [
+    "defense"
+  ],
+  "Tackles_TklW": [
+    "defense"
+  ],
+  "Tackles_Def 3rd": [
+    "defense"
+  ],
+  "Tackles_Mid 3rd": [
+    "defense"
+  ],
+  "Tackles_Att 3rd": [
+    "defense"
+  ],
+  "Challenges_Tkl": [
+    "defense"
+  ],
+  "Challenges_Att": [
+    "defense"
+  ],
+  "Challenges_Tkl%": [
+    "defense"
+  ],
+  "Challenges_Lost": [
+    "defense"
+  ],
+  "Blocks_Blocks": [
+    "defense"
+  ],
+  "Blocks_Sh": [
+    "defense"
+  ],
+  "Blocks_Pass": [
+    "defense"
+  ],
+  "Int": [
+    "defense"
+  ],
+  "Tkl+Int": [
+    "defense"
+  ],
+  "Clr": [
+    "defense"
+  ],
+  "Err": [
+    "defense"
+  ],
+  "Touches_Touches": [
+    "possession"
+  ],
+  "Touches_Def Pen": [
+    "possession"
+  ],
+  "Touches_Def 3rd": [
+    "possession"
+  ],
+  "Touches_Mid 3rd": [
+    "possession"
+  ],
+  "Touches_Att 3rd": [
+    "possession"
+  ],
+  "Touches_Att Pen": [
+    "possession"
+  ],
+  "Touches_Live": [
+    "possession"
+  ],
+  "Take-Ons_Att": [
+    "possession"
+  ],
+  "Take-Ons_Succ": [
+    "possession"
+  ],
+  "Take-Ons_Succ%": [
+    "possession"
+  ],
+  "Take-Ons_Tkld": [
+    "possession"
+  ],
+  "Take-Ons_Tkld%": [
+    "possession"
+  ],
+  "Carries_Carries": [
+    "possession"
+  ],
+  "Carries_TotDist": [
+    "possession"
+  ],
+  "Carries_PrgDist": [
+    "possession"
+  ],
+  "Carries_PrgC": [
+    "possession"
+  ],
+  "Carries_1/3": [
+    "possession"
+  ],
+  "Carries_CPA": [
+    "possession"
+  ],
+  "Carries_Mis": [
+    "possession"
+  ],
+  "Carries_Dis": [
+    "possession"
+  ],
+  "Receiving_Rec": [
+    "possession"
+  ],
+  "Receiving_PrgR": [
+    "possession"
+  ],
+  "Playing Time_Mn/MP": [
+    "playing_time"
+  ],
+  "Playing Time_Min%": [
+    "playing_time"
+  ],
+  "Starts_Starts": [
+    "playing_time"
+  ],
+  "Starts_Mn/Start": [
+    "playing_time"
+  ],
+  "Starts_Compl": [
+    "playing_time"
+  ],
+  "Subs_Subs": [
+    "playing_time"
+  ],
+  "Subs_Mn/Sub": [
+    "playing_time"
+  ],
+  "Subs_unSub": [
+    "playing_time"
+  ],
+  "Team Success_PPM": [
+    "playing_time"
+  ],
+  "Team Success_onG": [
+    "playing_time"
+  ],
+  "Team Success_onGA": [
+    "playing_time"
+  ],
+  "Team Success_+/-": [
+    "playing_time"
+  ],
+  "Team Success_+/-90": [
+    "playing_time"
+  ],
+  "Team Success_On-Off": [
+    "playing_time"
+  ],
+  "Team Success (xG)_onxG": [
+    "playing_time"
+  ],
+  "Team Success (xG)_onxGA": [
+    "playing_time"
+  ],
+  "Team Success (xG)_xG+/-": [
+    "playing_time"
+  ],
+  "Team Success (xG)_xG+/-90": [
+    "playing_time"
+  ],
+  "Team Success (xG)_On-Off": [
+    "playing_time"
+  ],
+  "Performance_2CrdY": [
+    "misc"
+  ],
+  "Performance_Fls": [
+    "misc"
+  ],
+  "Performance_Fld": [
+    "misc"
+  ],
+  "Performance_Off": [
+    "misc"
+  ],
+  "Performance_Crs": [
+    "misc"
+  ],
+  "Performance_Int": [
+    "misc"
+  ],
+  "Performance_TklW": [
+    "misc"
+  ],
+  "Performance_PKwon": [
+    "misc"
+  ],
+  "Performance_PKcon": [
+    "misc"
+  ],
+  "Performance_OG": [
+    "misc"
+  ],
+  "Performance_Recov": [
+    "misc"
+  ],
+  "Aerial Duels_Won": [
+    "misc"
+  ],
+  "Aerial Duels_Lost": [
+    "misc"
+  ],
+  "Aerial Duels_Won%": [
+    "misc"
+  ],
+  "Playing Time_MP_keeper": [
+    "keeper"
+  ],
+  "Playing Time_Starts_keeper": [
+    "keeper"
+  ],
+  "Playing Time_Min_keeper": [
+    "keeper"
+  ],
+  "Playing Time_90s_keeper": [
+    "keeper"
+  ],
+  "Performance_GA": [
+    "keeper"
+  ],
+  "Performance_GA90": [
+    "keeper"
+  ],
+  "Performance_SoTA": [
+    "keeper"
+  ],
+  "Performance_Saves": [
+    "keeper"
+  ],
+  "Performance_Save%": [
+    "keeper"
+  ],
+  "Performance_W": [
+    "keeper"
+  ],
+  "Performance_D": [
+    "keeper"
+  ],
+  "Performance_L": [
+    "keeper"
+  ],
+  "Performance_CS": [
+    "keeper"
+  ],
+  "Performance_CS%": [
+    "keeper"
+  ],
+  "Penalty Kicks_PKatt": [
+    "keeper"
+  ],
+  "Penalty Kicks_PKA": [
+    "keeper"
+  ],
+  "Penalty Kicks_PKsv": [
+    "keeper"
+  ],
+  "Penalty Kicks_PKm": [
+    "keeper"
+  ],
+  "Penalty Kicks_Save%": [
+    "keeper"
+  ],
+  "90s_keeper_adv": [
+    "keeper_adv"
+  ],
+  "Goals_GA": [
+    "keeper_adv"
+  ],
+  "Goals_PKA": [
+    "keeper_adv"
+  ],
+  "Goals_FK": [
+    "keeper_adv"
+  ],
+  "Goals_CK": [
+    "keeper_adv"
+  ],
+  "Goals_OG": [
+    "keeper_adv"
+  ],
+  "Expected_PSxG": [
+    "keeper_adv"
+  ],
+  "Expected_PSxG/SoT": [
+    "keeper_adv"
+  ],
+  "Expected_PSxG+/-": [
+    "keeper_adv"
+  ],
+  "Expected_/90": [
+    "keeper_adv"
+  ],
+  "Launched_Cmp": [
+    "keeper_adv"
+  ],
+  "Launched_Att": [
+    "keeper_adv"
+  ],
+  "Launched_Cmp%": [
+    "keeper_adv"
+  ],
+  "Passes_Att (GK)": [
+    "keeper_adv"
+  ],
+  "Passes_Thr": [
+    "keeper_adv"
+  ],
+  "Passes_Launch%": [
+    "keeper_adv"
+  ],
+  "Passes_AvgLen": [
+    "keeper_adv"
+  ],
+  "Goal Kicks_Att": [
+    "keeper_adv"
+  ],
+  "Goal Kicks_Launch%": [
+    "keeper_adv"
+  ],
+  "Goal Kicks_AvgLen": [
+    "keeper_adv"
+  ],
+  "Crosses_Opp": [
+    "keeper_adv"
+  ],
+  "Crosses_Stp": [
+    "keeper_adv"
+  ],
+  "Crosses_Stp%": [
+    "keeper_adv"
+  ],
+  "Sweeper_#OPA": [
+    "keeper_adv"
+  ],
+  "Sweeper_#OPA/90": [
+    "keeper_adv"
+  ],
+  "Sweeper_AvgDist": [
+    "keeper_adv"
+  ]
+}

@@ -1,0 +1,1156 @@
+{
+  "features": [
+    {
+      "label": "Aerial Duels Won per 90 (Miscellaneous)",
+      "original": "Aerial Duels_Won_per90",
+      "sources": [
+        "misc"
+      ],
+      "source_labels": [
+        "Miscellaneous"
+      ]
+    },
+    {
+      "label": "Ast per 90 (Standard)",
+      "original": "Per 90 Minutes_Ast",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "Attacking Penalty Touches per 90 (Possession)",
+      "original": "Touches_Att Pen_per90",
+      "sources": [
+        "possession"
+      ],
+      "source_labels": [
+        "Possession"
+      ]
+    },
+    {
+      "label": "Carries into Penalty Area per 90 (Possession)",
+      "original": "Carries_CPA_per90",
+      "sources": [
+        "possession"
+      ],
+      "source_labels": [
+        "Possession"
+      ]
+    },
+    {
+      "label": "Carries per 90 (Possession)",
+      "original": "Carries_Carries_per90",
+      "sources": [
+        "possession"
+      ],
+      "source_labels": [
+        "Possession"
+      ]
+    },
+    {
+      "label": "Carries: Miscontrols per 90 (Possession)",
+      "original": "Carries_Mis_per90",
+      "sources": [
+        "possession"
+      ],
+      "source_labels": [
+        "Possession"
+      ]
+    },
+    {
+      "label": "Carries: Times Dispossessed per 90 (Possession)",
+      "original": "Carries_Dis_per90",
+      "sources": [
+        "possession"
+      ],
+      "source_labels": [
+        "Possession"
+      ]
+    },
+    {
+      "label": "Challenges Lost per 90 (Defending)",
+      "original": "Challenges_Lost_per90",
+      "sources": [
+        "defense"
+      ],
+      "source_labels": [
+        "Defending"
+      ]
+    },
+    {
+      "label": "Clearances per 90 (Defending)",
+      "original": "Clr_per90",
+      "sources": [
+        "defense"
+      ],
+      "source_labels": [
+        "Defending"
+      ]
+    },
+    {
+      "label": "Completed Passes per 90 (Passing)",
+      "original": "Total_Cmp_per90",
+      "sources": [
+        "passing"
+      ],
+      "source_labels": [
+        "Passing"
+      ]
+    },
+    {
+      "label": "Completion% per 90 (Passing)",
+      "original": "Total_Cmp%_per90",
+      "sources": [
+        "passing"
+      ],
+      "source_labels": [
+        "Passing"
+      ]
+    },
+    {
+      "label": "Corner Kicks: In-swinging Corners per 90 (Passing Types)",
+      "original": "Corner Kicks_In_per90",
+      "sources": [
+        "passing_types"
+      ],
+      "source_labels": [
+        "Passing Types"
+      ]
+    },
+    {
+      "label": "Corner Kicks: Out-swinging Corners per 90 (Passing Types)",
+      "original": "Corner Kicks_Out_per90",
+      "sources": [
+        "passing_types"
+      ],
+      "source_labels": [
+        "Passing Types"
+      ]
+    },
+    {
+      "label": "Corner Kicks: Straight Corners per 90 (Passing Types)",
+      "original": "Corner Kicks_Str_per90",
+      "sources": [
+        "passing_types"
+      ],
+      "source_labels": [
+        "Passing Types"
+      ]
+    },
+    {
+      "label": "Crosses into Penalty Area per 90 (Passing)",
+      "original": "CrsPA_per90",
+      "sources": [
+        "passing"
+      ],
+      "source_labels": [
+        "Passing"
+      ]
+    },
+    {
+      "label": "Defensive Penalty Touches per 90 (Possession)",
+      "original": "Touches_Def Pen_per90",
+      "sources": [
+        "possession"
+      ],
+      "source_labels": [
+        "Possession"
+      ]
+    },
+    {
+      "label": "Defensive Third Tackles per 90 (Defending)",
+      "original": "Tackles_Def 3rd_per90",
+      "sources": [
+        "defense"
+      ],
+      "source_labels": [
+        "Defending"
+      ]
+    },
+    {
+      "label": "Err per 90 (Defending)",
+      "original": "Err_per90",
+      "sources": [
+        "defense"
+      ],
+      "source_labels": [
+        "Defending"
+      ]
+    },
+    {
+      "label": "Expected: A-XAG per 90 (Passing)",
+      "original": "Expected_A-xAG_per90",
+      "sources": [
+        "passing"
+      ],
+      "source_labels": [
+        "Passing"
+      ]
+    },
+    {
+      "label": "Expected: G-xG per 90 (Shooting)",
+      "original": "Expected_G-xG_per90",
+      "sources": [
+        "shooting"
+      ],
+      "source_labels": [
+        "Shooting"
+      ]
+    },
+    {
+      "label": "Expected: NP:G-xG per 90 (Shooting)",
+      "original": "Expected_np:G-xG_per90",
+      "sources": [
+        "shooting"
+      ],
+      "source_labels": [
+        "Shooting"
+      ]
+    },
+    {
+      "label": "Expected: xA per 90 (Passing)",
+      "original": "Expected_xA_per90",
+      "sources": [
+        "passing"
+      ],
+      "source_labels": [
+        "Passing"
+      ]
+    },
+    {
+      "label": "Final Third Entries per 90 (Passing)",
+      "original": "1/3_per90",
+      "sources": [
+        "passing"
+      ],
+      "source_labels": [
+        "Passing"
+      ]
+    },
+    {
+      "label": "G-PK per 90 (Standard)",
+      "original": "Per 90 Minutes_G-PK",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "GCA per 90 (Goal & Shot Creation)",
+      "original": "GCA_GCA_per90",
+      "sources": [
+        "goal_shot_creation"
+      ],
+      "source_labels": [
+        "Goal & Shot Creation"
+      ]
+    },
+    {
+      "label": "Gls per 90 (Standard)",
+      "original": "Per 90 Minutes_Gls",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "Goals + Assists (excl PK) per 90 (Standard)",
+      "original": "Per 90 Minutes_G+A-PK",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "Goals + Assists per 90 (Standard)",
+      "original": "Per 90 Minutes_G+A",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "Interceptions per 90 (Defending)",
+      "original": "Int_per90",
+      "sources": [
+        "defense"
+      ],
+      "source_labels": [
+        "Defending"
+      ]
+    },
+    {
+      "label": "Key Passes per 90 (Passing)",
+      "original": "KP_per90",
+      "sources": [
+        "passing"
+      ],
+      "source_labels": [
+        "Passing"
+      ]
+    },
+    {
+      "label": "Middle Third Tackles per 90 (Defending)",
+      "original": "Tackles_Mid 3rd_per90",
+      "sources": [
+        "defense"
+      ],
+      "source_labels": [
+        "Defending"
+      ]
+    },
+    {
+      "label": "NpxG per 90 (Standard)",
+      "original": "Per 90 Minutes_npxG",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "NpxG+XAG per 90 (Standard)",
+      "original": "Per 90 Minutes_npxG+xAG",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "Outcomes: Blocks per 90 (Passing Types)",
+      "original": "Outcomes_Blocks_per90",
+      "sources": [
+        "passing_types"
+      ],
+      "source_labels": [
+        "Passing Types"
+      ]
+    },
+    {
+      "label": "Outcomes: Offsides per 90 (Passing Types)",
+      "original": "Outcomes_Off_per90",
+      "sources": [
+        "passing_types"
+      ],
+      "source_labels": [
+        "Passing Types"
+      ]
+    },
+    {
+      "label": "Pass Attempts per 90 (Passing)",
+      "original": "Total_Att_per90",
+      "sources": [
+        "passing"
+      ],
+      "source_labels": [
+        "Passing"
+      ]
+    },
+    {
+      "label": "Pass Blocks per 90 (Defending)",
+      "original": "Blocks_Pass_per90",
+      "sources": [
+        "defense"
+      ],
+      "source_labels": [
+        "Defending"
+      ]
+    },
+    {
+      "label": "Pass Types: Corner Kicks per 90 (Passing Types)",
+      "original": "Pass Types_CK_per90",
+      "sources": [
+        "passing_types"
+      ],
+      "source_labels": [
+        "Passing Types"
+      ]
+    },
+    {
+      "label": "Pass Types: Crosses per 90 (Passing Types)",
+      "original": "Pass Types_Crs_per90",
+      "sources": [
+        "passing_types"
+      ],
+      "source_labels": [
+        "Passing Types"
+      ]
+    },
+    {
+      "label": "Pass Types: Dead Ball Passes per 90 (Passing Types)",
+      "original": "Pass Types_Dead_per90",
+      "sources": [
+        "passing_types"
+      ],
+      "source_labels": [
+        "Passing Types"
+      ]
+    },
+    {
+      "label": "Pass Types: Live Ball Passes per 90 (Passing Types)",
+      "original": "Pass Types_Live_per90",
+      "sources": [
+        "passing_types"
+      ],
+      "source_labels": [
+        "Passing Types"
+      ]
+    },
+    {
+      "label": "Pass Types: Sw per 90 (Passing Types)",
+      "original": "Pass Types_Sw_per90",
+      "sources": [
+        "passing_types"
+      ],
+      "source_labels": [
+        "Passing Types"
+      ]
+    },
+    {
+      "label": "Pass Types: Through Balls per 90 (Passing Types)",
+      "original": "Pass Types_TB_per90",
+      "sources": [
+        "passing_types"
+      ],
+      "source_labels": [
+        "Passing Types"
+      ]
+    },
+    {
+      "label": "Pass Types: Throw-Ins per 90 (Passing Types)",
+      "original": "Pass Types_TI_per90",
+      "sources": [
+        "passing_types"
+      ],
+      "source_labels": [
+        "Passing Types"
+      ]
+    },
+    {
+      "label": "Passes into Penalty Area per 90 (Passing)",
+      "original": "PPA_per90",
+      "sources": [
+        "passing"
+      ],
+      "source_labels": [
+        "Passing"
+      ]
+    },
+    {
+      "label": "Performance: 2CrdY per 90 (Miscellaneous)",
+      "original": "Performance_2CrdY_per90",
+      "sources": [
+        "misc"
+      ],
+      "source_labels": [
+        "Miscellaneous"
+      ]
+    },
+    {
+      "label": "Performance: CrdR per 90 (Miscellaneous / Standard)",
+      "original": "Performance_CrdR_per90",
+      "sources": [
+        "misc",
+        "standard"
+      ],
+      "source_labels": [
+        "Miscellaneous",
+        "Standard"
+      ]
+    },
+    {
+      "label": "Performance: CrdY per 90 (Miscellaneous / Standard)",
+      "original": "Performance_CrdY_per90",
+      "sources": [
+        "misc",
+        "standard"
+      ],
+      "source_labels": [
+        "Miscellaneous",
+        "Standard"
+      ]
+    },
+    {
+      "label": "Performance: Fouls Won per 90 (Miscellaneous)",
+      "original": "Performance_Fls_per90",
+      "sources": [
+        "misc"
+      ],
+      "source_labels": [
+        "Miscellaneous"
+      ]
+    },
+    {
+      "label": "Performance: OG per 90 (Miscellaneous)",
+      "original": "Performance_OG_per90",
+      "sources": [
+        "misc"
+      ],
+      "source_labels": [
+        "Miscellaneous"
+      ]
+    },
+    {
+      "label": "Performance: PK per 90 (Standard)",
+      "original": "Performance_PK_per90",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "Performance: PKatt per 90 (Standard)",
+      "original": "Performance_PKatt_per90",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "Performance: PKcon per 90 (Miscellaneous)",
+      "original": "Performance_PKcon_per90",
+      "sources": [
+        "misc"
+      ],
+      "source_labels": [
+        "Miscellaneous"
+      ]
+    },
+    {
+      "label": "Performance: PKwon per 90 (Miscellaneous)",
+      "original": "Performance_PKwon_per90",
+      "sources": [
+        "misc"
+      ],
+      "source_labels": [
+        "Miscellaneous"
+      ]
+    },
+    {
+      "label": "Performance: Recoveries per 90 (Miscellaneous)",
+      "original": "Performance_Recov_per90",
+      "sources": [
+        "misc"
+      ],
+      "source_labels": [
+        "Miscellaneous"
+      ]
+    },
+    {
+      "label": "Playing Time: Matches Played per 90 (Playing Time / Standard)",
+      "original": "Playing Time_MP_per90",
+      "sources": [
+        "playing_time",
+        "standard"
+      ],
+      "source_labels": [
+        "Playing Time",
+        "Standard"
+      ]
+    },
+    {
+      "label": "Playing Time: Minutes Played per 90 (Playing Time / Standard)",
+      "original": "Playing Time_Min_per90",
+      "sources": [
+        "playing_time",
+        "standard"
+      ],
+      "source_labels": [
+        "Playing Time",
+        "Standard"
+      ]
+    },
+    {
+      "label": "Playing Time: Minutes Played% per 90 (Playing Time)",
+      "original": "Playing Time_Min%_per90",
+      "sources": [
+        "playing_time"
+      ],
+      "source_labels": [
+        "Playing Time"
+      ]
+    },
+    {
+      "label": "Playing Time: Minutes per Match per 90 (Playing Time)",
+      "original": "Playing Time_Mn/MP_per90",
+      "sources": [
+        "playing_time"
+      ],
+      "source_labels": [
+        "Playing Time"
+      ]
+    },
+    {
+      "label": "Playing Time: Starts per 90 (Standard)",
+      "original": "Playing Time_Starts_per90",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "Progression: Progressive Carries per 90 (Standard)",
+      "original": "Progression_PrgC_per90",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "Progression: Progressive Passes per 90 (Standard)",
+      "original": "Progression_PrgP_per90",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "Progression: Progressive Receptions per 90 (Standard)",
+      "original": "Progression_PrgR_per90",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "Progressive Distance per 90 (Passing)",
+      "original": "Total_PrgDist_per90",
+      "sources": [
+        "passing"
+      ],
+      "source_labels": [
+        "Passing"
+      ]
+    },
+    {
+      "label": "Receiving: Receptions per 90 (Possession)",
+      "original": "Receiving_Rec_per90",
+      "sources": [
+        "possession"
+      ],
+      "source_labels": [
+        "Possession"
+      ]
+    },
+    {
+      "label": "SCA Types: Dead-Ball SCAs per 90 (Goal & Shot Creation)",
+      "original": "SCA Types_PassDead_per90",
+      "sources": [
+        "goal_shot_creation"
+      ],
+      "source_labels": [
+        "Goal & Shot Creation"
+      ]
+    },
+    {
+      "label": "SCA Types: Def per 90 (Goal & Shot Creation)",
+      "original": "SCA Types_Def_per90",
+      "sources": [
+        "goal_shot_creation"
+      ],
+      "source_labels": [
+        "Goal & Shot Creation"
+      ]
+    },
+    {
+      "label": "SCA Types: Fouls Drawn per 90 (Goal & Shot Creation)",
+      "original": "SCA Types_Fld_per90",
+      "sources": [
+        "goal_shot_creation"
+      ],
+      "source_labels": [
+        "Goal & Shot Creation"
+      ]
+    },
+    {
+      "label": "SCA Types: Live-Pass SCAs per 90 (Goal & Shot Creation)",
+      "original": "SCA Types_PassLive_per90",
+      "sources": [
+        "goal_shot_creation"
+      ],
+      "source_labels": [
+        "Goal & Shot Creation"
+      ]
+    },
+    {
+      "label": "SCA Types: Take-On SCAs per 90 (Goal & Shot Creation)",
+      "original": "SCA Types_TO_per90",
+      "sources": [
+        "goal_shot_creation"
+      ],
+      "source_labels": [
+        "Goal & Shot Creation"
+      ]
+    },
+    {
+      "label": "SCA: Shot-Creating Actions per 90 (Goal & Shot Creation)",
+      "original": "SCA_SCA_per90",
+      "sources": [
+        "goal_shot_creation"
+      ],
+      "source_labels": [
+        "Goal & Shot Creation"
+      ]
+    },
+    {
+      "label": "Standard: FK per 90 (Shooting)",
+      "original": "Standard_FK_per90",
+      "sources": [
+        "shooting"
+      ],
+      "source_labels": [
+        "Shooting"
+      ]
+    },
+    {
+      "label": "Standard: Shots on Target/90 per 90 (Shooting)",
+      "original": "Standard_SoT/90",
+      "sources": [
+        "shooting"
+      ],
+      "source_labels": [
+        "Shooting"
+      ]
+    },
+    {
+      "label": "Standard: Shots/90 per 90 (Shooting)",
+      "original": "Standard_Sh/90",
+      "sources": [
+        "shooting"
+      ],
+      "source_labels": [
+        "Shooting"
+      ]
+    },
+    {
+      "label": "Starts: Full Matches Completed per 90 (Playing Time)",
+      "original": "Starts_Compl_per90",
+      "sources": [
+        "playing_time"
+      ],
+      "source_labels": [
+        "Playing Time"
+      ]
+    },
+    {
+      "label": "Subs: Times Subbed Off per 90 (Playing Time)",
+      "original": "Subs_unSub_per90",
+      "sources": [
+        "playing_time"
+      ],
+      "source_labels": [
+        "Playing Time"
+      ]
+    },
+    {
+      "label": "Substitutions per 90 (Playing Time)",
+      "original": "Subs_Subs_per90",
+      "sources": [
+        "playing_time"
+      ],
+      "source_labels": [
+        "Playing Time"
+      ]
+    },
+    {
+      "label": "Successful Take-Ons per 90 (Possession)",
+      "original": "Take-Ons_Succ_per90",
+      "sources": [
+        "possession"
+      ],
+      "source_labels": [
+        "Possession"
+      ]
+    },
+    {
+      "label": "Tackles + Interceptions per 90 (Defending)",
+      "original": "Tkl+Int_per90",
+      "sources": [
+        "defense"
+      ],
+      "source_labels": [
+        "Defending"
+      ]
+    },
+    {
+      "label": "Tackles Won per 90 (Defending)",
+      "original": "Tackles_TklW_per90",
+      "sources": [
+        "defense"
+      ],
+      "source_labels": [
+        "Defending"
+      ]
+    },
+    {
+      "label": "Tackles per 90 (Defending)",
+      "original": "Tackles_Tkl_per90",
+      "sources": [
+        "defense"
+      ],
+      "source_labels": [
+        "Defending"
+      ]
+    },
+    {
+      "label": "Tackles: Pass Attempts 3rd per 90 (Defending)",
+      "original": "Tackles_Att 3rd_per90",
+      "sources": [
+        "defense"
+      ],
+      "source_labels": [
+        "Defending"
+      ]
+    },
+    {
+      "label": "Take-Ons: Times Tackled per 90 (Possession)",
+      "original": "Take-Ons_Tkld_per90",
+      "sources": [
+        "possession"
+      ],
+      "source_labels": [
+        "Possession"
+      ]
+    },
+    {
+      "label": "Team Success (xG): On-Pitch xG For per 90 (Playing Time)",
+      "original": "Team Success (xG)_onxG_per90",
+      "sources": [
+        "playing_time"
+      ],
+      "source_labels": [
+        "Playing Time"
+      ]
+    },
+    {
+      "label": "Team Success (xG): On-Pitch xGA Against per 90 (Playing Time)",
+      "original": "Team Success (xG)_onxGA_per90",
+      "sources": [
+        "playing_time"
+      ],
+      "source_labels": [
+        "Playing Time"
+      ]
+    },
+    {
+      "label": "Team Success (xG): xG Differential per 90 (Playing Time)",
+      "original": "Team Success (xG)_xG+/-_per90",
+      "sources": [
+        "playing_time"
+      ],
+      "source_labels": [
+        "Playing Time"
+      ]
+    },
+    {
+      "label": "Team Success: Goal Differential per 90 (Playing Time)",
+      "original": "Team Success_+/-_per90",
+      "sources": [
+        "playing_time"
+      ],
+      "source_labels": [
+        "Playing Time"
+      ]
+    },
+    {
+      "label": "Team Success: On-Pitch Goals Against per 90 (Playing Time)",
+      "original": "Team Success_onGA_per90",
+      "sources": [
+        "playing_time"
+      ],
+      "source_labels": [
+        "Playing Time"
+      ]
+    },
+    {
+      "label": "Team Success: On-Pitch Goals For per 90 (Playing Time)",
+      "original": "Team Success_onG_per90",
+      "sources": [
+        "playing_time"
+      ],
+      "source_labels": [
+        "Playing Time"
+      ]
+    },
+    {
+      "label": "Team Success: Points per Match per 90 (Playing Time)",
+      "original": "Team Success_PPM_per90",
+      "sources": [
+        "playing_time"
+      ],
+      "source_labels": [
+        "Playing Time"
+      ]
+    },
+    {
+      "label": "Total Distance per 90 (Passing)",
+      "original": "Total_TotDist_per90",
+      "sources": [
+        "passing"
+      ],
+      "source_labels": [
+        "Passing"
+      ]
+    },
+    {
+      "label": "Touches per 90 (Possession)",
+      "original": "Touches_Touches_per90",
+      "sources": [
+        "possession"
+      ],
+      "source_labels": [
+        "Possession"
+      ]
+    },
+    {
+      "label": "XAG per 90 (Standard)",
+      "original": "Per 90 Minutes_xAG",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "xG per 90 (Standard)",
+      "original": "Per 90 Minutes_xG",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    },
+    {
+      "label": "xG+XAG per 90 (Standard)",
+      "original": "Per 90 Minutes_xG+xAG",
+      "sources": [
+        "standard"
+      ],
+      "source_labels": [
+        "Standard"
+      ]
+    }
+  ],
+  "original_to_label": {
+    "Per 90 Minutes_Gls": "Gls per 90 (Standard)",
+    "Per 90 Minutes_Ast": "Ast per 90 (Standard)",
+    "Per 90 Minutes_G+A": "Goals + Assists per 90 (Standard)",
+    "Per 90 Minutes_G-PK": "G-PK per 90 (Standard)",
+    "Per 90 Minutes_G+A-PK": "Goals + Assists (excl PK) per 90 (Standard)",
+    "Per 90 Minutes_xG": "xG per 90 (Standard)",
+    "Per 90 Minutes_xAG": "XAG per 90 (Standard)",
+    "Per 90 Minutes_xG+xAG": "xG+XAG per 90 (Standard)",
+    "Per 90 Minutes_npxG": "NpxG per 90 (Standard)",
+    "Per 90 Minutes_npxG+xAG": "NpxG+XAG per 90 (Standard)",
+    "Standard_Sh/90": "Standard: Shots/90 per 90 (Shooting)",
+    "Standard_SoT/90": "Standard: Shots on Target/90 per 90 (Shooting)",
+    "Playing Time_MP_per90": "Playing Time: Matches Played per 90 (Playing Time / Standard)",
+    "Playing Time_Starts_per90": "Playing Time: Starts per 90 (Standard)",
+    "Playing Time_Min_per90": "Playing Time: Minutes Played per 90 (Playing Time / Standard)",
+    "Performance_PK_per90": "Performance: PK per 90 (Standard)",
+    "Performance_PKatt_per90": "Performance: PKatt per 90 (Standard)",
+    "Performance_CrdY_per90": "Performance: CrdY per 90 (Miscellaneous / Standard)",
+    "Performance_CrdR_per90": "Performance: CrdR per 90 (Miscellaneous / Standard)",
+    "Progression_PrgC_per90": "Progression: Progressive Carries per 90 (Standard)",
+    "Progression_PrgP_per90": "Progression: Progressive Passes per 90 (Standard)",
+    "Progression_PrgR_per90": "Progression: Progressive Receptions per 90 (Standard)",
+    "Standard_FK_per90": "Standard: FK per 90 (Shooting)",
+    "Expected_G-xG_per90": "Expected: G-xG per 90 (Shooting)",
+    "Expected_np:G-xG_per90": "Expected: NP:G-xG per 90 (Shooting)",
+    "Total_Cmp_per90": "Completed Passes per 90 (Passing)",
+    "Total_Att_per90": "Pass Attempts per 90 (Passing)",
+    "Total_Cmp%_per90": "Completion% per 90 (Passing)",
+    "Total_TotDist_per90": "Total Distance per 90 (Passing)",
+    "Total_PrgDist_per90": "Progressive Distance per 90 (Passing)",
+    "Expected_xA_per90": "Expected: xA per 90 (Passing)",
+    "Expected_A-xAG_per90": "Expected: A-XAG per 90 (Passing)",
+    "KP_per90": "Key Passes per 90 (Passing)",
+    "1/3_per90": "Final Third Entries per 90 (Passing)",
+    "PPA_per90": "Passes into Penalty Area per 90 (Passing)",
+    "CrsPA_per90": "Crosses into Penalty Area per 90 (Passing)",
+    "Pass Types_Live_per90": "Pass Types: Live Ball Passes per 90 (Passing Types)",
+    "Pass Types_Dead_per90": "Pass Types: Dead Ball Passes per 90 (Passing Types)",
+    "Pass Types_TB_per90": "Pass Types: Through Balls per 90 (Passing Types)",
+    "Pass Types_Sw_per90": "Pass Types: Sw per 90 (Passing Types)",
+    "Pass Types_Crs_per90": "Pass Types: Crosses per 90 (Passing Types)",
+    "Pass Types_TI_per90": "Pass Types: Throw-Ins per 90 (Passing Types)",
+    "Pass Types_CK_per90": "Pass Types: Corner Kicks per 90 (Passing Types)",
+    "Corner Kicks_In_per90": "Corner Kicks: In-swinging Corners per 90 (Passing Types)",
+    "Corner Kicks_Out_per90": "Corner Kicks: Out-swinging Corners per 90 (Passing Types)",
+    "Corner Kicks_Str_per90": "Corner Kicks: Straight Corners per 90 (Passing Types)",
+    "Outcomes_Off_per90": "Outcomes: Offsides per 90 (Passing Types)",
+    "Outcomes_Blocks_per90": "Outcomes: Blocks per 90 (Passing Types)",
+    "SCA_SCA_per90": "SCA: Shot-Creating Actions per 90 (Goal & Shot Creation)",
+    "SCA Types_PassLive_per90": "SCA Types: Live-Pass SCAs per 90 (Goal & Shot Creation)",
+    "SCA Types_PassDead_per90": "SCA Types: Dead-Ball SCAs per 90 (Goal & Shot Creation)",
+    "SCA Types_TO_per90": "SCA Types: Take-On SCAs per 90 (Goal & Shot Creation)",
+    "SCA Types_Fld_per90": "SCA Types: Fouls Drawn per 90 (Goal & Shot Creation)",
+    "SCA Types_Def_per90": "SCA Types: Def per 90 (Goal & Shot Creation)",
+    "GCA_GCA_per90": "GCA per 90 (Goal & Shot Creation)",
+    "Tackles_Tkl_per90": "Tackles per 90 (Defending)",
+    "Tackles_TklW_per90": "Tackles Won per 90 (Defending)",
+    "Tackles_Def 3rd_per90": "Defensive Third Tackles per 90 (Defending)",
+    "Tackles_Mid 3rd_per90": "Middle Third Tackles per 90 (Defending)",
+    "Tackles_Att 3rd_per90": "Tackles: Pass Attempts 3rd per 90 (Defending)",
+    "Challenges_Lost_per90": "Challenges Lost per 90 (Defending)",
+    "Blocks_Pass_per90": "Pass Blocks per 90 (Defending)",
+    "Int_per90": "Interceptions per 90 (Defending)",
+    "Tkl+Int_per90": "Tackles + Interceptions per 90 (Defending)",
+    "Clr_per90": "Clearances per 90 (Defending)",
+    "Err_per90": "Err per 90 (Defending)",
+    "Touches_Touches_per90": "Touches per 90 (Possession)",
+    "Touches_Def Pen_per90": "Defensive Penalty Touches per 90 (Possession)",
+    "Touches_Att Pen_per90": "Attacking Penalty Touches per 90 (Possession)",
+    "Take-Ons_Succ_per90": "Successful Take-Ons per 90 (Possession)",
+    "Take-Ons_Tkld_per90": "Take-Ons: Times Tackled per 90 (Possession)",
+    "Carries_Carries_per90": "Carries per 90 (Possession)",
+    "Carries_CPA_per90": "Carries into Penalty Area per 90 (Possession)",
+    "Carries_Mis_per90": "Carries: Miscontrols per 90 (Possession)",
+    "Carries_Dis_per90": "Carries: Times Dispossessed per 90 (Possession)",
+    "Receiving_Rec_per90": "Receiving: Receptions per 90 (Possession)",
+    "Playing Time_Mn/MP_per90": "Playing Time: Minutes per Match per 90 (Playing Time)",
+    "Playing Time_Min%_per90": "Playing Time: Minutes Played% per 90 (Playing Time)",
+    "Starts_Compl_per90": "Starts: Full Matches Completed per 90 (Playing Time)",
+    "Subs_Subs_per90": "Substitutions per 90 (Playing Time)",
+    "Subs_unSub_per90": "Subs: Times Subbed Off per 90 (Playing Time)",
+    "Team Success_PPM_per90": "Team Success: Points per Match per 90 (Playing Time)",
+    "Team Success_onG_per90": "Team Success: On-Pitch Goals For per 90 (Playing Time)",
+    "Team Success_onGA_per90": "Team Success: On-Pitch Goals Against per 90 (Playing Time)",
+    "Team Success_+/-_per90": "Team Success: Goal Differential per 90 (Playing Time)",
+    "Team Success (xG)_onxG_per90": "Team Success (xG): On-Pitch xG For per 90 (Playing Time)",
+    "Team Success (xG)_onxGA_per90": "Team Success (xG): On-Pitch xGA Against per 90 (Playing Time)",
+    "Team Success (xG)_xG+/-_per90": "Team Success (xG): xG Differential per 90 (Playing Time)",
+    "Performance_2CrdY_per90": "Performance: 2CrdY per 90 (Miscellaneous)",
+    "Performance_Fls_per90": "Performance: Fouls Won per 90 (Miscellaneous)",
+    "Performance_PKwon_per90": "Performance: PKwon per 90 (Miscellaneous)",
+    "Performance_PKcon_per90": "Performance: PKcon per 90 (Miscellaneous)",
+    "Performance_OG_per90": "Performance: OG per 90 (Miscellaneous)",
+    "Performance_Recov_per90": "Performance: Recoveries per 90 (Miscellaneous)",
+    "Aerial Duels_Won_per90": "Aerial Duels Won per 90 (Miscellaneous)"
+  },
+  "label_to_original": {
+    "Gls per 90 (Standard)": "Per 90 Minutes_Gls",
+    "Ast per 90 (Standard)": "Per 90 Minutes_Ast",
+    "Goals + Assists per 90 (Standard)": "Per 90 Minutes_G+A",
+    "G-PK per 90 (Standard)": "Per 90 Minutes_G-PK",
+    "Goals + Assists (excl PK) per 90 (Standard)": "Per 90 Minutes_G+A-PK",
+    "xG per 90 (Standard)": "Per 90 Minutes_xG",
+    "XAG per 90 (Standard)": "Per 90 Minutes_xAG",
+    "xG+XAG per 90 (Standard)": "Per 90 Minutes_xG+xAG",
+    "NpxG per 90 (Standard)": "Per 90 Minutes_npxG",
+    "NpxG+XAG per 90 (Standard)": "Per 90 Minutes_npxG+xAG",
+    "Standard: Shots/90 per 90 (Shooting)": "Standard_Sh/90",
+    "Standard: Shots on Target/90 per 90 (Shooting)": "Standard_SoT/90",
+    "Playing Time: Matches Played per 90 (Playing Time / Standard)": "Playing Time_MP_per90",
+    "Playing Time: Starts per 90 (Standard)": "Playing Time_Starts_per90",
+    "Playing Time: Minutes Played per 90 (Playing Time / Standard)": "Playing Time_Min_per90",
+    "Performance: PK per 90 (Standard)": "Performance_PK_per90",
+    "Performance: PKatt per 90 (Standard)": "Performance_PKatt_per90",
+    "Performance: CrdY per 90 (Miscellaneous / Standard)": "Performance_CrdY_per90",
+    "Performance: CrdR per 90 (Miscellaneous / Standard)": "Performance_CrdR_per90",
+    "Progression: Progressive Carries per 90 (Standard)": "Progression_PrgC_per90",
+    "Progression: Progressive Passes per 90 (Standard)": "Progression_PrgP_per90",
+    "Progression: Progressive Receptions per 90 (Standard)": "Progression_PrgR_per90",
+    "Standard: FK per 90 (Shooting)": "Standard_FK_per90",
+    "Expected: G-xG per 90 (Shooting)": "Expected_G-xG_per90",
+    "Expected: NP:G-xG per 90 (Shooting)": "Expected_np:G-xG_per90",
+    "Completed Passes per 90 (Passing)": "Total_Cmp_per90",
+    "Pass Attempts per 90 (Passing)": "Total_Att_per90",
+    "Completion% per 90 (Passing)": "Total_Cmp%_per90",
+    "Total Distance per 90 (Passing)": "Total_TotDist_per90",
+    "Progressive Distance per 90 (Passing)": "Total_PrgDist_per90",
+    "Expected: xA per 90 (Passing)": "Expected_xA_per90",
+    "Expected: A-XAG per 90 (Passing)": "Expected_A-xAG_per90",
+    "Key Passes per 90 (Passing)": "KP_per90",
+    "Final Third Entries per 90 (Passing)": "1/3_per90",
+    "Passes into Penalty Area per 90 (Passing)": "PPA_per90",
+    "Crosses into Penalty Area per 90 (Passing)": "CrsPA_per90",
+    "Pass Types: Live Ball Passes per 90 (Passing Types)": "Pass Types_Live_per90",
+    "Pass Types: Dead Ball Passes per 90 (Passing Types)": "Pass Types_Dead_per90",
+    "Pass Types: Through Balls per 90 (Passing Types)": "Pass Types_TB_per90",
+    "Pass Types: Sw per 90 (Passing Types)": "Pass Types_Sw_per90",
+    "Pass Types: Crosses per 90 (Passing Types)": "Pass Types_Crs_per90",
+    "Pass Types: Throw-Ins per 90 (Passing Types)": "Pass Types_TI_per90",
+    "Pass Types: Corner Kicks per 90 (Passing Types)": "Pass Types_CK_per90",
+    "Corner Kicks: In-swinging Corners per 90 (Passing Types)": "Corner Kicks_In_per90",
+    "Corner Kicks: Out-swinging Corners per 90 (Passing Types)": "Corner Kicks_Out_per90",
+    "Corner Kicks: Straight Corners per 90 (Passing Types)": "Corner Kicks_Str_per90",
+    "Outcomes: Offsides per 90 (Passing Types)": "Outcomes_Off_per90",
+    "Outcomes: Blocks per 90 (Passing Types)": "Outcomes_Blocks_per90",
+    "SCA: Shot-Creating Actions per 90 (Goal & Shot Creation)": "SCA_SCA_per90",
+    "SCA Types: Live-Pass SCAs per 90 (Goal & Shot Creation)": "SCA Types_PassLive_per90",
+    "SCA Types: Dead-Ball SCAs per 90 (Goal & Shot Creation)": "SCA Types_PassDead_per90",
+    "SCA Types: Take-On SCAs per 90 (Goal & Shot Creation)": "SCA Types_TO_per90",
+    "SCA Types: Fouls Drawn per 90 (Goal & Shot Creation)": "SCA Types_Fld_per90",
+    "SCA Types: Def per 90 (Goal & Shot Creation)": "SCA Types_Def_per90",
+    "GCA per 90 (Goal & Shot Creation)": "GCA_GCA_per90",
+    "Tackles per 90 (Defending)": "Tackles_Tkl_per90",
+    "Tackles Won per 90 (Defending)": "Tackles_TklW_per90",
+    "Defensive Third Tackles per 90 (Defending)": "Tackles_Def 3rd_per90",
+    "Middle Third Tackles per 90 (Defending)": "Tackles_Mid 3rd_per90",
+    "Tackles: Pass Attempts 3rd per 90 (Defending)": "Tackles_Att 3rd_per90",
+    "Challenges Lost per 90 (Defending)": "Challenges_Lost_per90",
+    "Pass Blocks per 90 (Defending)": "Blocks_Pass_per90",
+    "Interceptions per 90 (Defending)": "Int_per90",
+    "Tackles + Interceptions per 90 (Defending)": "Tkl+Int_per90",
+    "Clearances per 90 (Defending)": "Clr_per90",
+    "Err per 90 (Defending)": "Err_per90",
+    "Touches per 90 (Possession)": "Touches_Touches_per90",
+    "Defensive Penalty Touches per 90 (Possession)": "Touches_Def Pen_per90",
+    "Attacking Penalty Touches per 90 (Possession)": "Touches_Att Pen_per90",
+    "Successful Take-Ons per 90 (Possession)": "Take-Ons_Succ_per90",
+    "Take-Ons: Times Tackled per 90 (Possession)": "Take-Ons_Tkld_per90",
+    "Carries per 90 (Possession)": "Carries_Carries_per90",
+    "Carries into Penalty Area per 90 (Possession)": "Carries_CPA_per90",
+    "Carries: Miscontrols per 90 (Possession)": "Carries_Mis_per90",
+    "Carries: Times Dispossessed per 90 (Possession)": "Carries_Dis_per90",
+    "Receiving: Receptions per 90 (Possession)": "Receiving_Rec_per90",
+    "Playing Time: Minutes per Match per 90 (Playing Time)": "Playing Time_Mn/MP_per90",
+    "Playing Time: Minutes Played% per 90 (Playing Time)": "Playing Time_Min%_per90",
+    "Starts: Full Matches Completed per 90 (Playing Time)": "Starts_Compl_per90",
+    "Substitutions per 90 (Playing Time)": "Subs_Subs_per90",
+    "Subs: Times Subbed Off per 90 (Playing Time)": "Subs_unSub_per90",
+    "Team Success: Points per Match per 90 (Playing Time)": "Team Success_PPM_per90",
+    "Team Success: On-Pitch Goals For per 90 (Playing Time)": "Team Success_onG_per90",
+    "Team Success: On-Pitch Goals Against per 90 (Playing Time)": "Team Success_onGA_per90",
+    "Team Success: Goal Differential per 90 (Playing Time)": "Team Success_+/-_per90",
+    "Team Success (xG): On-Pitch xG For per 90 (Playing Time)": "Team Success (xG)_onxG_per90",
+    "Team Success (xG): On-Pitch xGA Against per 90 (Playing Time)": "Team Success (xG)_onxGA_per90",
+    "Team Success (xG): xG Differential per 90 (Playing Time)": "Team Success (xG)_xG+/-_per90",
+    "Performance: 2CrdY per 90 (Miscellaneous)": "Performance_2CrdY_per90",
+    "Performance: Fouls Won per 90 (Miscellaneous)": "Performance_Fls_per90",
+    "Performance: PKwon per 90 (Miscellaneous)": "Performance_PKwon_per90",
+    "Performance: PKcon per 90 (Miscellaneous)": "Performance_PKcon_per90",
+    "Performance: OG per 90 (Miscellaneous)": "Performance_OG_per90",
+    "Performance: Recoveries per 90 (Miscellaneous)": "Performance_Recov_per90",
+    "Aerial Duels Won per 90 (Miscellaneous)": "Aerial Duels_Won_per90"
+  }
+}
