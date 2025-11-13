@@ -6,6 +6,12 @@ I used data from FBREF to analyse player data from the 2025-2026 premier league 
 pip install -r requirements.txt
 ```
 
+## Scheduled data refresh
+- Automated workflow: `.github/workflows/data-refresh.yml` runs every 10 hours and on manual dispatch. It installs `requirements.txt` followed by `dev-requirements.txt` (for `soccerdata`) before executing `python src/data_loader.py`, `python src/preprocess.py`, and `python src/clustering.py`.
+- Keep-alive strategy: if the refresh does not change data artefacts, the workflow updates `app/keepalive.txt` so Streamlit receives a heartbeat commit.
+- Secrets: add any FBref or StatsBomb credentials (for example `SOCCERDATA_EMAIL`, `SOCCERDATA_PASSWORD`, or `SOCCERDATA_DATA_DIR`) as repository secrets and map them into the workflow via `env:` if your `.env` expects them.
+- Local verification: run the three scripts above in a clean environment or invoke `act -j refresh-and-commit` to smoke-test the pipeline before merging workflow edits.
+
 # Loading in the data
 ```bash
 python src/data_loader.py
