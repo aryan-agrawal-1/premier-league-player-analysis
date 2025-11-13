@@ -365,7 +365,6 @@ def render_position_tab(df, position, ability1_name, ability1_col, ability2_name
                 top_n=10,
                 title=f'Top {ability2_name}'
             ),
-            width='stretch',
             config=plotly_config()
         )
 
