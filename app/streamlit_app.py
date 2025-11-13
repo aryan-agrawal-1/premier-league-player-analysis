@@ -1,14 +1,54 @@
 import sys
 import warnings
+import os
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import streamlit as st
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+ROOT_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(ROOT_DIR / 'src' / '.env')
+
+# Force deprecation warnings to show in dev mode
+# This helps catch issues that only appear in production
+# Check if we're NOT in production (default to showing warnings in dev)
+is_production = (
+    os.getenv('STREAMLIT_SERVER_ENV') == 'production' or 
+    os.getenv('ENV') == 'production' or
+    os.getenv('STREAMLIT_SERVER_HEADLESS') == 'true'
+)
+if not is_production:
+    # Show all deprecation-related warnings in dev
+    warnings.simplefilter('always', DeprecationWarning)
+    warnings.simplefilter('always', PendingDeprecationWarning)
+    # Streamlit often uses UserWarning for deprecations
+    warnings.filterwarnings('always', category=UserWarning, 
+                            message='.*deprecated.*')
+    warnings.filterwarnings('always', category=UserWarning, 
+                            message='.*keyword.*argument.*')
 
 # Suppress FutureWarning from Plotly Express internal pandas groupby operations
 warnings.filterwarnings('ignore', category=FutureWarning, 
                         message='.*length-1.*get_group.*')
+
+# Suppress plotly internal numpy deprecation warning
+warnings.filterwarnings('ignore', category=DeprecationWarning,
+                        message='.*np.bool8.*')
+
+# Suppress pandas BlockManager deprecation warning
+warnings.filterwarnings('ignore', category=DeprecationWarning,
+                        message='.*BlockManager.*')
+
+# Suppress pandas bottleneck version warning
+warnings.filterwarnings('ignore', category=UserWarning,
+                        message='.*bottleneck.*')
+
+# Suppress pyarrow sparse deprecation warning
+warnings.filterwarnings('ignore', category=DeprecationWarning,
+                        message='.*is_sparse.*')
 
 
 # Make sure we can import our project modules no matter where Streamlit launches from
@@ -170,15 +210,15 @@ def create_similarity_preview():
         player_series = store_df.loc[player_idx, store.feature_cols]
         
         feature_list = store.feature_cols[:6]
-        player_values = player_series[feature_list].fillna(0).to_numpy()
-        comparison_values = comparison_series[feature_list].fillna(0).to_numpy()
+        player_values = np.nan_to_num(player_series[feature_list].to_numpy(), nan=0.0)
+        comparison_values = np.nan_to_num(comparison_series[feature_list].to_numpy(), nan=0.0)
         
-        mins = store_df[feature_list].min()
-        maxs = store_df[feature_list].max()
-        ranges = (maxs - mins).replace(0, 1.0)
+        mins = store_df[feature_list].min().to_numpy()
+        maxs = store_df[feature_list].max().to_numpy()
+        ranges = np.where((maxs - mins) == 0, 1.0, maxs - mins)
         
-        player_scaled = ((player_values - mins) / ranges).fillna(0).to_numpy()
-        comparison_scaled = ((comparison_values - mins) / ranges).fillna(0).to_numpy()
+        player_scaled = np.nan_to_num((player_values - mins) / ranges, nan=0.0)
+        comparison_scaled = np.nan_to_num((comparison_values - mins) / ranges, nan=0.0)
         
         labels = [col.replace('_per90', '').replace('_', ' ')[:15] for col in feature_list]
         
@@ -294,7 +334,7 @@ def create_panel(title, description, preview_fig, page_path):
         st.markdown(description)
 
         if preview_fig:
-            st.plotly_chart(preview_fig, width='stretch', config=plotly_config({'displayModeBar': False}))
+            st.plotly_chart(preview_fig, config=plotly_config({'displayModeBar': False}))
         else:
             st.info("Preview unavailable")
 

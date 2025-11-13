@@ -1,10 +1,18 @@
 import sys
 import warnings
+import os
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import streamlit as st
+
+# Suppress known external library warnings
+warnings.filterwarnings('ignore', category=DeprecationWarning, message='.*np.bool8.*')
+warnings.filterwarnings('ignore', category=DeprecationWarning, message='.*BlockManager.*')
+warnings.filterwarnings('ignore', category=DeprecationWarning, message='.*is_sparse.*')
+warnings.filterwarnings('ignore', category=FutureWarning, message='.*length-1.*get_group.*')
+warnings.filterwarnings('ignore', category=UserWarning, message='.*bottleneck.*')
 from streamlit_app import (
     load_store,
     load_pca_table,
@@ -37,10 +45,10 @@ def pick_radar_features(store_df, feature_cols, player_idx, comparison_series, l
     position_std = position_std.replace(0, np.nan)
     if position_std.isna().all():
         position_std = global_std.replace(0, np.nan)
-    position_std = position_std.fillna(global_std)
-    position_std = position_std.replace(0, np.nan).fillna(1.0)
+    position_std = position_std.fillna(global_std).infer_objects(copy=False)
+    position_std = position_std.replace(0, np.nan).fillna(1.0).infer_objects(copy=False)
 
-    effect = (diff.abs() / position_std).fillna(0)
+    effect = (diff.abs() / position_std).fillna(0).infer_objects(copy=False)
     top_features = effect.nlargest(min(limit, len(effect))).index.tolist()
     if not top_features:
         top_features = feature_cols[:min(limit, len(feature_cols))]
@@ -53,19 +61,19 @@ def scale_vectors_for_radar(store_df, feature_list, player_series, comparison_se
     maxs = feature_frame.max()
     ranges = (maxs - mins).replace(0, 1.0)
 
-    player_scaled = ((player_series - mins) / ranges).fillna(0).to_numpy()
-    comparison_scaled = ((comparison_series - mins) / ranges).fillna(0).to_numpy()
+    player_scaled = ((player_series - mins) / ranges).fillna(0).infer_objects(copy=False).to_numpy()
+    comparison_scaled = ((comparison_series - mins) / ranges).fillna(0).infer_objects(copy=False).to_numpy()
     labels = feature_list
     
     if raw_player_series is None:
-        player_raw = pd.to_numeric(player_series, errors='coerce').fillna(0).to_numpy()
+        player_raw = pd.to_numeric(player_series, errors='coerce').fillna(0).infer_objects(copy=False).to_numpy()
     else:
-        player_raw = pd.to_numeric(raw_player_series.reindex(feature_list), errors='coerce').fillna(0).to_numpy()
+        player_raw = pd.to_numeric(raw_player_series.reindex(feature_list), errors='coerce').fillna(0).infer_objects(copy=False).to_numpy()
     
     if raw_comparison_series is None:
-        comparison_raw = pd.to_numeric(comparison_series, errors='coerce').fillna(0).to_numpy()
+        comparison_raw = pd.to_numeric(comparison_series, errors='coerce').fillna(0).infer_objects(copy=False).to_numpy()
     else:
-        comparison_raw = pd.to_numeric(raw_comparison_series.reindex(feature_list), errors='coerce').fillna(0).to_numpy()
+        comparison_raw = pd.to_numeric(raw_comparison_series.reindex(feature_list), errors='coerce').fillna(0).infer_objects(copy=False).to_numpy()
     
     return player_scaled, comparison_scaled, labels, player_raw, comparison_raw
 
@@ -136,7 +144,7 @@ def main():
             display_cols = ['player', 'team', 'position', 'similarity']
             table = similar[display_cols].copy()
             table['similarity'] = table['similarity'].round(3)
-            st.dataframe(table, width='stretch', hide_index=True)
+            st.dataframe(table, hide_index=True)
         else:
             st.info('No comparable players found for this selection.')
 
@@ -194,7 +202,7 @@ def main():
             comparison_hover_values=comparison_raw_values,
             hover_precision=2,
         )
-        st.plotly_chart(radar_fig, width='stretch', config=plotly_config())
+        st.plotly_chart(radar_fig, config=plotly_config())
 
     st.write('---')
 

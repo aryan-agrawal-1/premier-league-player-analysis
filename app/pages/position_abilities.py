@@ -1,5 +1,6 @@
 import sys
 import warnings
+import os
 from pathlib import Path
 
 import numpy as np
@@ -7,10 +8,32 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
+from dotenv import load_dotenv
 
-# Suppress FutureWarning from Plotly Express internal pandas groupby operations
-warnings.filterwarnings('ignore', category=FutureWarning, 
-                        message='.*length-1.*get_group.*')
+# Load environment variables from .env file
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+load_dotenv(ROOT_DIR / 'src' / '.env')
+
+# Force deprecation warnings to show in dev mode
+is_production = (
+    os.getenv('STREAMLIT_SERVER_ENV') == 'production' or 
+    os.getenv('ENV') == 'production' or
+    os.getenv('STREAMLIT_SERVER_HEADLESS') == 'true'
+)
+if not is_production:
+    warnings.simplefilter('always', DeprecationWarning)
+    warnings.simplefilter('always', PendingDeprecationWarning)
+    warnings.filterwarnings('always', category=UserWarning, 
+                            message='.*deprecated.*')
+    warnings.filterwarnings('always', category=UserWarning, 
+                            message='.*keyword.*argument.*')
+
+# Suppress known external library warnings
+warnings.filterwarnings('ignore', category=DeprecationWarning, message='.*np.bool8.*')
+warnings.filterwarnings('ignore', category=DeprecationWarning, message='.*BlockManager.*')
+warnings.filterwarnings('ignore', category=DeprecationWarning, message='.*is_sparse.*')
+warnings.filterwarnings('ignore', category=FutureWarning, message='.*length-1.*get_group.*')
+warnings.filterwarnings('ignore', category=UserWarning, message='.*bottleneck.*')
 
 # Make sure we can import our project modules
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
@@ -316,7 +339,6 @@ def render_position_tab(df, position, ability1_name, ability1_col, ability2_name
             hover_cols=['player', 'team'],
             full_df=axis_data
         ),
-        width='stretch',
         config=plotly_config()
     )
     
@@ -332,7 +354,6 @@ def render_position_tab(df, position, ability1_name, ability1_col, ability2_name
                 top_n=10,
                 title=f'Top {ability1_name}'
             ),
-            width='stretch',
             config=plotly_config()
         )
     

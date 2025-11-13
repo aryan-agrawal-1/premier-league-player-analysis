@@ -3,6 +3,10 @@ from pathlib import Path
 
 import pandas as pd
 import soccerdata as sd
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv(Path(__file__).parent / '.env')
 
 
 STAT_TYPES = [
