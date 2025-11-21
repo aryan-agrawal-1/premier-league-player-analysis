@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 
 import pandas as pd
@@ -79,7 +80,12 @@ class FBrefDataLoader:
         target_path = self._target_path(stat_type)
         
         print(f"Fetching {stat_type} from FBref...")
-        frame = self._fbref().read_player_season_stats(stat_type=stat_type)
+        try:
+            frame = self._fbref().read_player_season_stats(stat_type=stat_type)
+        except ConnectionError as e:
+            print(f"⚠ ConnectionError fetching {stat_type}: {e}")
+            print(f"   Skipping {stat_type} and continuing with other stat types...")
+            raise
         
         if isinstance(frame.index, pd.MultiIndex):
             frame = frame.reset_index()
@@ -94,19 +100,41 @@ class FBrefDataLoader:
     def refresh_all(self):
         print(f"\nRefreshing {len(self.stat_types)} stat types...")
         frames = {}
+        failed_stats = []
         for i, stat_type in enumerate(self.stat_types, 1):
             print(f"\n[{i}/{len(self.stat_types)}] Processing {stat_type}")
-            frames[stat_type] = self.fetch_stat(stat_type)
-        print(f"\n✓ Completed refresh for all {len(self.stat_types)} stat types")
+            try:
+                frames[stat_type] = self.fetch_stat(stat_type)
+            except ConnectionError:
+                failed_stats.append(stat_type)
+                continue
+        
+        if failed_stats:
+            print(f"\n⚠ Failed to fetch {len(failed_stats)} stat type(s): {', '.join(failed_stats)}")
+            print(f"✓ Successfully refreshed {len(frames)}/{len(self.stat_types)} stat types")
+        else:
+            print(f"\n✓ Completed refresh for all {len(self.stat_types)} stat types")
+        
         return frames
 
 
 def refresh_all_stats():
     print("Starting FBref data refresh...")
     loader = FBrefDataLoader()
-    loader.refresh_all()
+    try:
+        frames = loader.refresh_all()
+        if not frames:
+            print("\n⚠ No data was successfully fetched. This may be due to connection issues.")
+            return False
+        return True
+    except Exception as e:
+        print(f"\n❌ Unexpected error during data refresh: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
 
 
 if __name__ == "__main__":
-    refresh_all_stats()
+    success = refresh_all_stats()
+    sys.exit(0 if success else 0)  # Always exit 0 to allow heartbeat update
 

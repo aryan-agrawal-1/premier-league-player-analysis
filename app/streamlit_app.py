@@ -117,6 +117,87 @@ def load_cluster_table():
     return cluster_df, centroids, metadata
 
 
+@st.cache_data
+def load_profile_options():
+    store = load_store()
+    cols = ['player', 'team', 'season']
+    df = store.df[cols].copy()
+    df = df.dropna(subset=['player']).drop_duplicates()
+    if df.empty:
+        return []
+    df = df.sort_values(['player', 'season'], na_position='last')
+    options = []
+    for _, row in df.iterrows():
+        player = row.get('player')
+        team = row.get('team')
+        season = row.get('season')
+        team_label = team if isinstance(team, str) and team.strip() else ('' if pd.isna(team) else str(team))
+        season_label = season if pd.notna(season) else 'N/A'
+        label = '%s — %s (%s)' % (
+            player,
+            team_label or 'Unknown',
+            season_label,
+        )
+        options.append(
+            {
+                'label': label,
+                'player': player,
+                'team': team if pd.notna(team) else None,
+                'season': season if pd.notna(season) else None,
+            }
+        )
+    return options
+
+
+def set_player_profile_query(player=None, team=None, season=None):
+    params = st.query_params
+
+    def assign(key, value):
+        if value is None:
+            params.pop(key, None)
+            return
+        if isinstance(value, float) and np.isnan(value):
+            params.pop(key, None)
+            return
+        params[key] = value
+
+    assign('player', player)
+    assign('team', team)
+    assign('season', season)
+
+
+def render_quick_profile_search():
+    options = load_profile_options()
+    if not options:
+        return
+    
+    def on_player_select():
+        selected_label = st.session_state['profile-search']
+        if selected_label == 'Select a player...':
+            return
+        target = next(opt for opt in options if opt['label'] == selected_label)
+        # Store in session state to pass to next page
+        st.session_state['_pending_player'] = target.get('player')
+        st.session_state['_pending_team'] = target.get('team')
+        st.session_state['_pending_season'] = target.get('season')
+        st.session_state['_switch_to_profile'] = True
+    
+    placeholder = 'Select a player...'
+    labels = [placeholder] + [opt['label'] for opt in options]
+    
+    st.selectbox(
+        'Quick player profile',
+        labels,
+        index=0,
+        key='profile-search',
+        on_change=on_player_select,
+    )
+    
+    if st.session_state.get('_switch_to_profile', False):
+        st.session_state['_switch_to_profile'] = False
+        st.switch_page('pages/player_profile.py')
+
+
 def detect_minutes_column(df):
     for col in df.columns:
         if 'Min' in col and '90' not in col:
@@ -364,6 +445,7 @@ def main():
     """, unsafe_allow_html=True)
 
     st.title('Football Data Analysis Project')
+    render_quick_profile_search()
     st.markdown('**A linear algebra based analysis using techniques learned from my university course and applied to the premier league to explore player characteristics**')
     st.caption('Data from FBref | All Features are standardised')
     

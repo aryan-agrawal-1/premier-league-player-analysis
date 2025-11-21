@@ -142,6 +142,7 @@ def build_cluster_columns(base_df, cluster_df):
     base_df['cluster_label'] = cluster_labels
     return base_df
 
+
 def render_league_map_tab(store, store_df, projection_df, pca_components, axis_metadata, cluster_df, position_choice):
     projection_slice = projection_df[projection_df['position'] == position_choice]
     combined_df = store_df.join(projection_slice[['pc1', 'pc2']], how='inner')

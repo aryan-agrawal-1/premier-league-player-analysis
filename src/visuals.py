@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import plotly.colors as pc
 
 from team_colors import TEAM_COLORS
 
@@ -23,6 +24,7 @@ def plotly_config(overrides=None):
 __all__ = [
     'league_scatter',
     'player_radar_chart',
+    'radial_score_chart',
     'plotly_config',
 ]
 
@@ -181,8 +183,8 @@ def league_scatter(data, color_by='position', hover_stats=None, title='Player DN
 
 def player_radar_chart(
     player_values,
-    comparison_values,
-    feature_labels,
+    comparison_values=None,
+    feature_labels=None,
     player_label='Player',
     comparison_label='Comparison',
     title='Player Profile Comparison',
@@ -190,25 +192,32 @@ def player_radar_chart(
     comparison_hover_values=None,
     hover_precision=2
 ):
-    # Overlay player vs comparison vector so we can see strengths and trade-offs quickly
+    # Overlay player vs optional comparison vector to highlight strengths quickly
+    if feature_labels is None:
+        feature_labels = []
     player_vec = np.asarray(player_values, dtype=float)
-    comp_vec = np.asarray(comparison_values, dtype=float)
     labels = list(feature_labels)
-    if len(player_vec) != len(comp_vec) or len(player_vec) != len(labels):
-        raise ValueError('feature lengths do not align')
+    if len(player_vec) != len(labels):
+        raise ValueError('player feature lengths do not align')
     if len(labels) < 3:
         raise ValueError('radar charts need at least three features')
-    # Close the polygon by repeating the first point at the end
+
+    comp_vec = None
+    if comparison_values is not None:
+        comp_vec = np.asarray(comparison_values, dtype=float)
+        if len(comp_vec) != len(labels):
+            raise ValueError('comparison feature lengths do not align')
+
     wrap_labels = labels + [labels[0]]
     player_points = np.append(player_vec, player_vec[0])
-    comp_points = np.append(comp_vec, comp_vec[0])
     value_fmt = f'.{max(0, int(hover_precision))}f'
     player_custom = None
-    comparison_custom = None
     player_hover_template = (
         '<b>%{theta}</b><br>'
         f'{player_label}: %{{r:{value_fmt}}}<extra></extra>'
     )
+
+    comparison_custom = None
     comparison_hover_template = (
         '<b>%{theta}</b><br>'
         f'{comparison_label}: %{{r:{value_fmt}}}<extra></extra>'
@@ -217,11 +226,12 @@ def player_radar_chart(
     if player_hover_values is not None and comparison_hover_values is not None:
         player_hover = np.asarray(player_hover_values, dtype=float)
         comparison_hover = np.asarray(comparison_hover_values, dtype=float)
-        if len(player_hover) != len(labels) or len(comparison_hover) != len(labels):
-            raise ValueError('hover value lengths do not align with feature labels')
+        if player_hover.shape[0] != len(labels) or comparison_hover.shape[0] != len(labels):
+            raise ValueError('hover value lengths must match feature labels')
+        player_hover = player_hover.reshape(len(labels))
+        comparison_hover = comparison_hover.reshape(len(labels))
         hover_pairs_player = np.column_stack([player_hover, comparison_hover])
         hover_pairs_comparison = np.column_stack([comparison_hover, player_hover])
-        # Repeat the first row to close the polygon
         hover_pairs_player = np.vstack([hover_pairs_player, hover_pairs_player[0]])
         hover_pairs_comparison = np.vstack([hover_pairs_comparison, hover_pairs_comparison[0]])
         player_custom = hover_pairs_player
@@ -236,6 +246,37 @@ def player_radar_chart(
             f'{comparison_label}: %{{customdata[0]:{value_fmt}}}<br>'
             f'{player_label}: %{{customdata[1]:{value_fmt}}}<extra></extra>'
         )
+    else:
+        if player_hover_values is not None:
+            player_hover = np.asarray(player_hover_values, dtype=float)
+            if player_hover.shape[0] != len(labels):
+                raise ValueError('player hover values must match feature labels')
+            if player_hover.ndim == 1:
+                player_hover = player_hover.reshape(-1, 1)
+            player_custom = np.vstack([player_hover, player_hover[0]])
+            player_hover_template = (
+                '<b>%{theta}</b><br>'
+                + '<br>'.join(
+                    f'{player_label} metric {idx + 1}: %{{customdata[{idx}]:{value_fmt}}}'
+                    for idx in range(player_hover.shape[1])
+                )
+                + '<extra></extra>'
+            )
+        if comparison_hover_values is not None and comp_vec is not None:
+            comparison_hover = np.asarray(comparison_hover_values, dtype=float)
+            if comparison_hover.shape[0] != len(labels):
+                raise ValueError('comparison hover values must match feature labels')
+            if comparison_hover.ndim == 1:
+                comparison_hover = comparison_hover.reshape(-1, 1)
+            comparison_custom = np.vstack([comparison_hover, comparison_hover[0]])
+            comparison_hover_template = (
+                '<b>%{theta}</b><br>'
+                + '<br>'.join(
+                    f'{comparison_label} metric {idx + 1}: %{{customdata[{idx}]:{value_fmt}}}'
+                    for idx in range(comparison_hover.shape[1])
+                )
+                + '<extra></extra>'
+            )
 
     fig = go.Figure()
     fig.add_trace(
@@ -249,19 +290,25 @@ def player_radar_chart(
             hovertemplate=player_hover_template,
         )
     )
-    fig.add_trace(
-        go.Scatterpolar(
-            r=comp_points,
-            theta=wrap_labels,
-            fill='toself',
-            name=comparison_label,
-            line=dict(width=2),
-            customdata=comparison_custom,
-            hovertemplate=comparison_hover_template,
+
+    if comp_vec is not None:
+        comp_points = np.append(comp_vec, comp_vec[0])
+        fig.add_trace(
+            go.Scatterpolar(
+                r=comp_points,
+                theta=wrap_labels,
+                fill='toself',
+                name=comparison_label,
+                line=dict(width=2),
+                customdata=comparison_custom,
+                hovertemplate=comparison_hover_template,
+            )
         )
-    )
-    # Keep polar axis positive even if both vectors collapse to zeros
-    max_val = np.nanmax(np.concatenate([player_vec, comp_vec]))
+
+    axis_values = player_vec
+    if comp_vec is not None:
+        axis_values = np.concatenate([axis_values, comp_vec])
+    max_val = np.nanmax(axis_values)
     if np.isnan(max_val) or max_val == 0:
         max_val = 1.0
     fig.update_layout(
@@ -269,5 +316,106 @@ def player_radar_chart(
         polar=dict(radialaxis=dict(visible=True, range=[0, max_val * 1.05])),
         legend=dict(orientation='h', yanchor='bottom', y=-0.1, xanchor='center', x=0.5),
         margin=dict(l=40, r=40, t=60, b=40),
+    )
+    return fig
+
+
+def _resolve_color_scale(scale):
+    if scale is None:
+        return pc.sequential.YlOrBr
+    if isinstance(scale, str):
+        return pc.get_colorscale(scale)
+    return scale
+
+
+def _score_to_color(value, max_value, color_scale=None):
+    scale = _resolve_color_scale(color_scale)
+    if max_value <= 0:
+        max_value = 1.0
+    norm = min(max(value / max_value, 0.0), 1.0)
+    return pc.sample_colorscale(scale, norm)[0]
+
+
+def radial_score_chart(
+    values,
+    labels,
+    *,
+    max_value=100.0,
+    title='Ability score (0-100)',
+    color_scale=None,
+    text_font='Inter'
+):
+    values = np.asarray(values, dtype=float)
+    labels_list = list(labels)
+    if values.size != len(labels_list):
+        raise ValueError('values and labels must be the same length')
+    if values.size < 3:
+        raise ValueError('need at least three values for radial chart')
+
+    clean_values = np.nan_to_num(values, nan=0.0, posinf=0.0, neginf=0.0)
+    theta = np.linspace(0, 360, num=len(clean_values), endpoint=False)
+    width = (360 / len(clean_values)) * 0.85
+    colors = [_score_to_color(v, max_value, color_scale) for v in clean_values]
+
+    fig = go.Figure()
+    fig.add_trace(
+        go.Barpolar(
+            r=clean_values,
+            theta=theta,
+            width=width,
+            marker=dict(
+                color=colors,
+                line=dict(color='rgba(0,0,0,0.6)', width=1.2),
+            ),
+            opacity=0.95,
+            customdata=np.array(labels_list).reshape(-1, 1),
+            hovertemplate='<b>%{customdata[0]}</b><br>Score: %{r:.1f}<extra></extra>',
+        )
+    )
+
+    text_r = np.clip(clean_values + max_value * 0.05, 0, max_value * 1.05)
+    fig.add_trace(
+        go.Scatterpolar(
+            r=text_r,
+            theta=theta,
+            mode='markers',
+            marker=dict(
+                symbol='square',
+                size=20,
+                color='rgba(0,0,0,0.5)',
+                line=dict(color='rgba(0,0,0,0)', width=0),
+            ),
+            hoverinfo='skip',
+        )
+    )
+    fig.add_trace(
+        go.Scatterpolar(
+            r=text_r,
+            theta=theta,
+            mode='text',
+            text=[f'{v:.0f}' for v in clean_values],
+            textfont=dict(color='#ffffff', size=12, family=text_font),
+            hoverinfo='skip',
+            textposition='middle center',
+        )
+    )
+
+    fig.update_layout(
+        title=title,
+        polar=dict(
+            bgcolor='rgba(0,0,0,0)',
+            radialaxis=dict(range=[0, max_value], showticklabels=False, ticks=''),
+            angularaxis=dict(
+                showline=False,
+                tickmode='array',
+                tickvals=theta,
+                ticktext=labels_list,
+                tickfont=dict(size=12, color='#111111', family=text_font),
+                rotation=90,
+                direction='clockwise',
+            ),
+        ),
+        showlegend=False,
+        margin=dict(l=100, r=100, t=60, b=80),
     )
     return fig

@@ -155,6 +155,122 @@ ABILITY_FEATURE_WEIGHTS = {
 
 
 
+RADAR_BUCKET_DEFINITIONS = {
+    "Keeper": {
+        "Shot-Stopping": {
+            "Performance_Save%": 0.35,
+            "Expected_PSxG+/-": 0.35,
+            "Performance_Saves": 0.15,
+            "Performance_GA90": 0.15,
+        },
+        "Goal Prevention": {
+            "Performance_CS%": 0.40,
+            "Performance_GA90": 0.30,
+            "Performance_Save%": 0.30,
+        },
+        "Distribution Control": {
+            "Passes_Att (GK)": 0.25,
+            "Passes_Launch%": 0.25,
+            "Launched_Cmp%": 0.25,
+            "Goal Kicks_Launch%": 0.25,
+        },
+        "Sweeper Activity": {
+            "Sweeper_#OPA/90": 0.60,
+            "Passes_Att (GK)": 0.20,
+            "Goal Kicks_Launch%": 0.20,
+        },
+        "Launch Accuracy": {
+            "Launched_Cmp%": 0.50,
+            "Passes_Launch%": 0.30,
+            "Goal Kicks_Launch%": 0.20,
+        },
+    },
+    "Defender": {
+        "On-Ball Defending": {
+            "Tackles_Tkl_per90": 0.30,
+            "Tackles_TklW_per90": 0.30,
+            "Challenges_Tkl_per90": 0.40,
+        },
+        "Box/Shot Suppression": {
+            "Blocks_Blocks_per90": 0.50,
+            "Int_per90": 0.25,
+            "Tkl+Int_per90": 0.25,
+        },
+        "Recoveries & Pressing": {
+            "Performance_Recov_per90": 0.40,
+            "Performance_Int_per90": 0.30,
+            "Performance_Fls_per90": 0.30,
+        },
+        "Progressive Passing": {
+            "Progression_PrgP_per90": 0.40,
+            "Pass Types_Crs_per90": 0.30,
+            "Receiving_PrgR_per90": 0.30,
+        },
+        "Ball Carrying": {
+            "Progression_PrgC_per90": 0.35,
+            "Carries_PrgC_per90": 0.35,
+            "Carries_PrgDist_per90": 0.30,
+        },
+    },
+    "Midfielder": {
+        "Defensive Coverage": {
+            "Tackles_Mid 3rd_per90": 0.30,
+            "Challenges_Tkl_per90": 0.25,
+            "Performance_TklW_per90": 0.25,
+            "Performance_Fls_per90": 0.20,
+        },
+        "Ball Winning & Recoveries": {
+            "Performance_Recov_per90": 0.40,
+            "Performance_Int_per90": 0.40,
+            "Performance_TklW_per90": 0.20,
+        },
+        "Chance Creation": {
+            "SCA_SCA90": 0.25,
+            "GCA_GCA90": 0.25,
+            "KP_per90": 0.25,
+            "Pass Types_TB_per90": 0.25,
+        },
+        "Final-Third Output": {
+            "Per 90 Minutes_xG+xAG": 0.40,
+            "Per 90 Minutes_Ast": 0.30,
+            "Per 90 Minutes_Gls": 0.30,
+        },
+        "Progression & Carrying": {
+            "Carries_1/3_per90": 0.35,
+            "Carries_PrgC_per90": 0.35,
+            "Carries_PrgDist_per90": 0.30,
+        },
+    },
+    "Attacker": {
+        "Finishing Threat": {
+            "Per 90 Minutes_Gls": 0.40,
+            "Per 90 Minutes_xG": 0.30,
+            "Per 90 Minutes_npxG": 0.30,
+        },
+        "Shot Quality & Volume": {
+            "Standard_SoT/90": 0.40,
+            "Expected_G-xG_per90": 0.30,
+            "Per 90 Minutes_xG+xAG": 0.30,
+        },
+        "Creative Passing": {
+            "SCA Types_PassLive_per90": 0.30,
+            "KP_per90": 0.30,
+            "Per 90 Minutes_Ast": 0.40,
+        },
+        "Take-on & Carrying": {
+            "Carries_Carries_per90": 0.30,
+            "Take-Ons_Succ_per90": 0.35,
+            "Take-Ons_Succ%": 0.35,
+        },
+        "Progressive Reception": {
+            "Receiving_PrgR_per90": 0.50,
+            "Carries_1/3_per90": 0.30,
+            "Carries_PrgC_per90": 0.20,
+        },
+    },
+}
+
+
 # Metrics whose larger values should penalise a player. They will be flipped in
 # the weighting step so that every ability score remains "higher is better".
 NEGATIVE_FEATURES = {
@@ -378,3 +494,87 @@ def export_feature_map(output_path=None, feature_map=None):
         json.dump(feature_map, handle, indent=2)
 
     return output_path
+
+
+def resolve_radar_bucket_map(available_columns, bucket_defs=None):
+    defs = bucket_defs or RADAR_BUCKET_DEFINITIONS
+    feature_cols = set(available_columns)
+    feature_map = {}
+    weight_map = {}
+    missing = {}
+
+    for position, buckets in defs.items():
+        feature_map[position] = {}
+        weight_map[position] = {}
+        for bucket_name, weights in buckets.items():
+            present = []
+            filtered_weights = {}
+            for feature, weight in weights.items():
+                if feature in feature_cols:
+                    present.append(feature)
+                    filtered_weights[feature] = float(weight)
+                else:
+                    missing.setdefault(position, {}).setdefault(bucket_name, []).append(feature)
+            feature_map[position][bucket_name] = present
+            weight_map[position][bucket_name] = filtered_weights
+
+    if missing:
+        raise ValueError(
+            "Radar bucket definitions reference missing columns: "
+            + json.dumps(missing, indent=2)
+        )
+
+    return feature_map, weight_map
+
+
+def build_radar_bucket_dataframe(vector_store, feature_frame=None, bucket_defs=None):
+    if feature_frame is None:
+        feature_frame = vector_store.df.copy()
+    else:
+        feature_frame = feature_frame.copy()
+        if not feature_frame.index.equals(vector_store.df.index):
+            feature_frame = feature_frame.reindex(vector_store.df.index)
+
+    available_columns = feature_frame.columns
+    feature_map, weight_map = resolve_radar_bucket_map(available_columns, bucket_defs)
+
+    frames = []
+    for position, bucket_map in feature_map.items():
+        indices = get_position_indices(vector_store, position)
+        if indices.size == 0:
+            continue
+
+        index_labels = vector_store.df.iloc[indices].index
+        meta_cols = list(vector_store.metadata_cols or [])
+        if "position" not in meta_cols:
+            meta_cols.append("position")
+        meta_frame = vector_store.df.iloc[indices][meta_cols].copy()
+        meta_frame["position"] = position
+
+        for bucket_name, feature_names in bucket_map.items():
+            if not feature_names:
+                continue
+
+            position_weights = weight_map.get(position, {})
+            bucket_weights = position_weights.get(bucket_name)
+            sub_frame = feature_frame.loc[index_labels, feature_names]
+            matrix = sub_frame.to_numpy(dtype=float)
+            matrix = np.nan_to_num(matrix, nan=0.0)
+
+            raw_scores = compute_weighted_bucket_scores(
+                matrix,
+                feature_names,
+                bucket_weights,
+            )
+            z_scores = normalize_scores_within_position(raw_scores)
+
+            meta_frame[f"{bucket_name}_raw"] = raw_scores
+            meta_frame[f"{bucket_name}_z"] = z_scores
+
+        frames.append(meta_frame)
+
+    if not frames:
+        return pd.DataFrame(), weight_map
+
+    combined = pd.concat(frames, ignore_index=False)
+    return combined, weight_map
