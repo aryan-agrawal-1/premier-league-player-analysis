@@ -24,15 +24,18 @@
     "standard"
   ],
   "Playing Time_MP": [
+    "playing_time",
     "standard"
   ],
   "Playing Time_Starts": [
     "standard"
   ],
   "Playing Time_Min": [
+    "playing_time",
     "standard"
   ],
   "Playing Time_90s": [
+    "playing_time",
     "standard"
   ],
   "Performance_Gls": [
@@ -54,6 +57,7 @@
     "standard"
   ],
   "Performance_CrdY": [
+    "misc",
     "standard"
   ],
   "Performance_CrdR": [
@@ -61,9 +65,11 @@
     "standard"
   ],
   "Expected_xG": [
+    "shooting",
     "standard"
   ],
   "Expected_npxG": [
+    "shooting",
     "standard"
   ],
   "Expected_xAG": [
@@ -111,13 +117,13 @@
   "Per 90 Minutes_npxG+xAG": [
     "standard"
   ],
-  "Expected_xG_shooting": [
-    "shooting"
-  ],
-  "Expected_npxG_shooting": [
-    "shooting"
-  ],
   "90s": [
+    "defense",
+    "goal_shot_creation",
+    "misc",
+    "passing",
+    "passing_types",
+    "possession",
     "shooting"
   ],
   "Standard_Gls": [
@@ -164,9 +170,6 @@
   ],
   "Expected_np:G-xG": [
     "shooting"
-  ],
-  "90s_passing": [
-    "passing"
   ],
   "Total_Cmp": [
     "passing"
@@ -237,9 +240,6 @@
   "PrgP": [
     "passing"
   ],
-  "90s_passing_types": [
-    "passing_types"
-  ],
   "Att": [
     "passing_types"
   ],
@@ -284,9 +284,6 @@
   ],
   "Outcomes_Blocks": [
     "passing_types"
-  ],
-  "90s_goal_shot_creation": [
-    "goal_shot_creation"
   ],
   "SCA_SCA": [
     "goal_shot_creation"
@@ -336,9 +333,6 @@
   "GCA Types_Def": [
     "goal_shot_creation"
   ],
-  "90s_defense": [
-    "defense"
-  ],
   "Tackles_Tkl": [
     "defense"
   ],
@@ -386,9 +380,6 @@
   ],
   "Err": [
     "defense"
-  ],
-  "90s_possession": [
-    "possession"
   ],
   "Touches_Touches": [
     "possession"
@@ -456,15 +447,6 @@
   "Receiving_PrgR": [
     "possession"
   ],
-  "Playing Time_MP_playing_time": [
-    "playing_time"
-  ],
-  "Playing Time_Min_playing_time": [
-    "playing_time"
-  ],
-  "Playing Time_90s_playing_time": [
-    "playing_time"
-  ],
   "Playing Time_Mn/MP": [
     "playing_time"
   ],
@@ -521,12 +503,6 @@
   ],
   "Team Success (xG)_On-Off": [
     "playing_time"
-  ],
-  "90s_misc": [
-    "misc"
-  ],
-  "Performance_CrdY_misc": [
-    "misc"
   ],
   "Performance_2CrdY": [
     "misc"
