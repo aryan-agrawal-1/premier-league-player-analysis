@@ -1,18 +1,18 @@
 {
   "Attacker": {
-    "inertia": 57934734.203465134,
+    "inertia": 56559891.12797793,
     "n_clusters": 4
   },
   "Midfielder": {
-    "inertia": 169940052.2675221,
+    "inertia": 192901194.03135216,
     "n_clusters": 4
   },
   "Defender": {
-    "inertia": 191846991.97255105,
+    "inertia": 193722459.8018653,
     "n_clusters": 4
   },
   "Keeper": {
-    "inertia": 52392189.097130865,
+    "inertia": 60087615.812711,
     "n_clusters": 2
   }
 }
