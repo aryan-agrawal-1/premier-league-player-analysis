@@ -65,9 +65,11 @@
     "standard"
   ],
   "Expected_xG": [
+    "shooting",
     "standard"
   ],
   "Expected_npxG": [
+    "shooting",
     "standard"
   ],
   "Expected_xAG": [
@@ -114,12 +116,6 @@
   ],
   "Per 90 Minutes_npxG+xAG": [
     "standard"
-  ],
-  "Expected_xG_shooting": [
-    "shooting"
-  ],
-  "Expected_npxG_shooting": [
-    "shooting"
   ],
   "90s": [
     "defense",
