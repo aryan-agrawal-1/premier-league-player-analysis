@@ -5,19 +5,19 @@
       "features": [
         {
           "name": "Carries_Carries",
-          "weight": 0.11560188030878822
+          "weight": 0.1155901999712737
         },
         {
           "name": "Total_Att",
-          "weight": 0.11546864811898849
+          "weight": 0.11545815241561201
         },
         {
           "name": "Att",
-          "weight": 0.11546864811898841
+          "weight": 0.115458152415612
         },
         {
-          "name": "Outcomes_Cmp",
-          "weight": 0.11460366292223503
+          "name": "Total_Cmp",
+          "weight": 0.11459501334177144
         }
       ]
     },
@@ -25,20 +25,20 @@
       "component": 2,
       "features": [
         {
-          "name": "Standard_Gls",
-          "weight": 0.13402183500077317
+          "name": "Performance_Gls",
+          "weight": 0.13402886539032613
         },
         {
-          "name": "Performance_Gls",
-          "weight": 0.1340218350007731
+          "name": "Standard_Gls",
+          "weight": 0.13402886539032613
         },
         {
           "name": "Expected_xG_shooting",
-          "weight": 0.13352550159112667
+          "weight": 0.13353041327754503
         },
         {
           "name": "Expected_xG",
-          "weight": 0.13352550159112664
+          "weight": 0.13353041327754503
         }
       ]
     }
@@ -49,19 +49,19 @@
       "features": [
         {
           "name": "SCA_SCA",
-          "weight": 0.1180520655207032
+          "weight": 0.11805504340763569
         },
         {
           "name": "SCA Types_PassLive",
-          "weight": 0.11541100714247068
+          "weight": 0.11541358014721506
         },
         {
           "name": "Touches_Att 3rd",
-          "weight": 0.11288703965238421
+          "weight": 0.11288925376130167
         },
         {
           "name": "Expected_npxG+xAG",
-          "weight": 0.10957391815140156
+          "weight": 0.10957519512946609
         }
       ]
     },
@@ -70,19 +70,19 @@
       "features": [
         {
           "name": "Medium_Cmp",
-          "weight": 0.13759242582005668
+          "weight": 0.13758580474336118
         },
         {
           "name": "Touches_Def 3rd",
-          "weight": 0.1339237562039282
+          "weight": 0.13390772745285578
         },
         {
           "name": "Medium_Att",
-          "weight": 0.13173402403539827
+          "weight": 0.1317306167020363
         },
         {
           "name": "Total_PrgDist",
-          "weight": 0.13162209302810146
+          "weight": 0.1316272366497276
         }
       ]
     }
@@ -93,19 +93,19 @@
       "features": [
         {
           "name": "Touches_Live",
-          "weight": 0.14989129430054554
+          "weight": 0.14990451219504236
         },
         {
           "name": "Touches_Touches",
-          "weight": 0.14989129430054554
+          "weight": 0.14990451219504236
         },
         {
           "name": "Total_Att",
-          "weight": 0.1496976830258137
+          "weight": 0.14971334965868346
         },
         {
           "name": "Att",
-          "weight": 0.1496976830258137
+          "weight": 0.14971334965868346
         }
       ]
     },
@@ -114,19 +114,19 @@
       "features": [
         {
           "name": "Total_Cmp%",
-          "weight": 0.15255030620065285
-        },
-        {
-          "name": "Total_Cmp_per90",
-          "weight": 0.1481278591755317
+          "weight": 0.15259974029478973
         },
         {
           "name": "Outcomes_Cmp_per90",
-          "weight": 0.14812785917553167
+          "weight": 0.1481725693322737
+        },
+        {
+          "name": "Total_Cmp_per90",
+          "weight": 0.14817256933227368
         },
         {
           "name": "Medium_Att_per90",
-          "weight": 0.14733782858550296
+          "weight": 0.14741074263717893
         }
       ]
     }
@@ -137,19 +137,19 @@
       "features": [
         {
           "name": "Touches_Touches",
-          "weight": 0.13099770852473566
+          "weight": 0.13099620960174693
         },
         {
           "name": "Touches_Live",
-          "weight": 0.1309854499507271
-        },
-        {
-          "name": "Total_Att",
-          "weight": 0.12990988031075357
+          "weight": 0.1309839877218335
         },
         {
           "name": "Att",
-          "weight": 0.12990988031075346
+          "weight": 0.1299087544679901
+        },
+        {
+          "name": "Total_Att",
+          "weight": 0.12990875446799
         }
       ]
     },
@@ -158,19 +158,19 @@
       "features": [
         {
           "name": "Touches_Att Pen_per90",
-          "weight": 0.12012790234777018
+          "weight": 0.12013629113159902
         },
         {
           "name": "Per 90 Minutes_xG+xAG",
-          "weight": 0.11916453953984989
+          "weight": 0.11917215869369265
         },
         {
           "name": "Per 90 Minutes_npxG+xAG",
-          "weight": 0.11885714552146778
+          "weight": 0.11886530515602359
         },
         {
           "name": "Expected_npxG+xAG_per90",
-          "weight": 0.11860586587785513
+          "weight": 0.11861399968636724
         }
       ]
     }
