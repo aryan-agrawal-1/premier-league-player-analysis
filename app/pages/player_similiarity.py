@@ -165,8 +165,10 @@ def main():
                 comparison_label = '%s centroid C%d' % (cluster_row['position'], cluster_row['cluster'] + 1)
                 comparison_series = pd.Series(centroids[int(cluster_row['cluster'])], index=store.feature_cols)
                 cluster_members = cluster_df[cluster_df['cluster'] == cluster_row['cluster']]['index'].tolist()
-                if cluster_members:
-                    comparison_raw_series = raw_store_df.loc[cluster_members, store.feature_cols].mean()
+                # Filter to indices that exist in raw_store_df to handle data drift between runs
+                valid_members = [m for m in cluster_members if m in raw_store_df.index]
+                if valid_members:
+                    comparison_raw_series = raw_store_df.loc[valid_members, store.feature_cols].mean()
 
         if comparison_series is None:
             if not similar.empty:
