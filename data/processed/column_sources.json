@@ -24,15 +24,18 @@
     "standard"
   ],
   "Playing Time_MP": [
+    "playing_time",
     "standard"
   ],
   "Playing Time_Starts": [
     "standard"
   ],
   "Playing Time_Min": [
+    "playing_time",
     "standard"
   ],
   "Playing Time_90s": [
+    "playing_time",
     "standard"
   ],
   "Performance_Gls": [
@@ -54,15 +57,19 @@
     "standard"
   ],
   "Performance_CrdY": [
+    "misc",
     "standard"
   ],
   "Performance_CrdR": [
+    "misc",
     "standard"
   ],
   "Expected_xG": [
+    "shooting",
     "standard"
   ],
   "Expected_npxG": [
+    "shooting",
     "standard"
   ],
   "Expected_xAG": [
@@ -109,12 +116,6 @@
   ],
   "Per 90 Minutes_npxG+xAG": [
     "standard"
-  ],
-  "Expected_xG_shooting": [
-    "shooting"
-  ],
-  "Expected_npxG_shooting": [
-    "shooting"
   ],
   "90s": [
     "defense",
@@ -446,15 +447,6 @@
   "Receiving_PrgR": [
     "possession"
   ],
-  "Playing Time_MP_playing_time": [
-    "playing_time"
-  ],
-  "Playing Time_Min_playing_time": [
-    "playing_time"
-  ],
-  "Playing Time_90s_playing_time": [
-    "playing_time"
-  ],
   "Playing Time_Mn/MP": [
     "playing_time"
   ],
@@ -511,12 +503,6 @@
   ],
   "Team Success (xG)_On-Off": [
     "playing_time"
-  ],
-  "Performance_CrdY_misc": [
-    "misc"
-  ],
-  "Performance_CrdR_misc": [
-    "misc"
   ],
   "Performance_2CrdY": [
     "misc"
