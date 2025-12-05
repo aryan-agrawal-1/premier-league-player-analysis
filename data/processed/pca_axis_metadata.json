@@ -5,19 +5,19 @@
       "features": [
         {
           "name": "Carries_Carries",
-          "weight": 0.11299074688911352
-        },
-        {
-          "name": "Att",
-          "weight": 0.11236131764493541
+          "weight": 0.11299074688911358
         },
         {
           "name": "Total_Att",
+          "weight": 0.11236131764493541
+        },
+        {
+          "name": "Att",
           "weight": 0.1123613176449354
         },
         {
           "name": "Pass Types_Live",
-          "weight": 0.11152302250809323
+          "weight": 0.11152302250809329
         }
       ]
     },
@@ -26,19 +26,19 @@
       "features": [
         {
           "name": "Expected_xG",
-          "weight": 0.1389107438449846
+          "weight": 0.1389107438449847
         },
         {
           "name": "Standard_Gls",
-          "weight": 0.13793158478680767
+          "weight": 0.13793158478680792
         },
         {
           "name": "Performance_Gls",
-          "weight": 0.13793158478680742
+          "weight": 0.1379315847868074
         },
         {
           "name": "Expected_npxG",
-          "weight": 0.133832996729813
+          "weight": 0.13383299672981308
         }
       ]
     }
@@ -49,19 +49,19 @@
       "features": [
         {
           "name": "SCA_SCA",
-          "weight": 0.11938228910700566
+          "weight": 0.11938228910700563
         },
         {
           "name": "SCA Types_PassLive",
-          "weight": 0.116295303479869
+          "weight": 0.11629530347986904
         },
         {
           "name": "Touches_Att 3rd",
-          "weight": 0.11462657847117814
+          "weight": 0.11462657847117819
         },
         {
           "name": "KP",
-          "weight": 0.10857025944838304
+          "weight": 0.10857025944838307
         }
       ]
     },
@@ -70,11 +70,11 @@
       "features": [
         {
           "name": "Medium_Cmp",
-          "weight": 0.13456548419005437
+          "weight": 0.13456548419005457
         },
         {
           "name": "Touches_Def 3rd",
-          "weight": 0.13196565949608063
+          "weight": 0.13196565949608058
         },
         {
           "name": "Touches_Def Pen",
@@ -82,7 +82,7 @@
         },
         {
           "name": "Total_PrgDist",
-          "weight": 0.1283850033725078
+          "weight": 0.12838500337250783
         }
       ]
     }
@@ -118,15 +118,15 @@
         },
         {
           "name": "Pass Types_Dead_per90",
-          "weight": -0.151655753195311
+          "weight": -0.15165575319531108
         },
         {
           "name": "Total_Cmp_per90",
-          "weight": 0.14671169343894816
+          "weight": 0.1467116934389482
         },
         {
           "name": "Outcomes_Cmp_per90",
-          "weight": 0.1467116934389481
+          "weight": 0.14671169343894816
         }
       ]
     }
@@ -137,18 +137,18 @@
       "features": [
         {
           "name": "Touches_Touches",
-          "weight": 0.12906959850074445
+          "weight": 0.12906959850074448
         },
         {
           "name": "Touches_Live",
-          "weight": 0.1290554663129465
-        },
-        {
-          "name": "Att",
-          "weight": 0.12775373565856285
+          "weight": 0.1290554663129466
         },
         {
           "name": "Total_Att",
+          "weight": 0.12775373565856282
+        },
+        {
+          "name": "Att",
           "weight": 0.12775373565856282
         }
       ]
@@ -158,19 +158,19 @@
       "features": [
         {
           "name": "Touches_Att Pen_per90",
-          "weight": 0.12459827703611896
+          "weight": 0.12459827703611893
         },
         {
           "name": "Touches_Att Pen",
-          "weight": 0.1189147943151258
+          "weight": 0.11891479431512583
         },
         {
           "name": "Per 90 Minutes_npxG+xAG",
-          "weight": 0.11794084233728706
+          "weight": 0.11794084233728722
         },
         {
           "name": "Expected_npxG+xAG_per90",
-          "weight": 0.11751967896583655
+          "weight": 0.11751967896583661
         }
       ]
     }
