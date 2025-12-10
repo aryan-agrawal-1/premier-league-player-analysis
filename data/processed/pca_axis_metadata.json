@@ -5,19 +5,19 @@
       "features": [
         {
           "name": "Carries_Carries",
-          "weight": 0.11150442743986458
+          "weight": 0.1115044453443515
         },
         {
           "name": "Total_Att",
-          "weight": 0.11084379989842727
+          "weight": 0.11084381643839213
         },
         {
           "name": "Att",
-          "weight": 0.11084379989842724
+          "weight": 0.11084381643839213
         },
         {
-          "name": "Outcomes_Cmp",
-          "weight": 0.11044617552990049
+          "name": "Total_Cmp",
+          "weight": 0.11044619104525505
         }
       ]
     },
@@ -26,19 +26,19 @@
       "features": [
         {
           "name": "Expected_xG",
-          "weight": 0.1414498407934576
+          "weight": 0.1414498540867927
         },
         {
           "name": "Performance_Gls",
-          "weight": 0.14004338114259343
+          "weight": 0.14004324961998363
         },
         {
           "name": "Standard_Gls",
-          "weight": 0.14004338114259338
+          "weight": 0.14004324961998352
         },
         {
           "name": "Expected_npxG",
-          "weight": 0.13693878860495798
+          "weight": 0.1369388065870679
         }
       ]
     }
@@ -137,19 +137,19 @@
       "features": [
         {
           "name": "Touches_Touches",
-          "weight": 0.12612371977151995
+          "weight": 0.12612372574153746
         },
         {
           "name": "Touches_Live",
-          "weight": 0.12610533450718325
+          "weight": 0.12610534049275676
         },
         {
           "name": "Receiving_Rec",
-          "weight": 0.12500259372314224
+          "weight": 0.12500260296581067
         },
         {
           "name": "Carries_Carries",
-          "weight": 0.12450245650895611
+          "weight": 0.1245024670352334
         }
       ]
     },
@@ -158,19 +158,19 @@
       "features": [
         {
           "name": "Touches_Att Pen_per90",
-          "weight": 0.12752848658327612
+          "weight": 0.12752846113188568
         },
         {
           "name": "Per 90 Minutes_npxG+xAG",
-          "weight": 0.12004312286540489
+          "weight": 0.1200431138087889
         },
         {
           "name": "Expected_npxG+xAG_per90",
-          "weight": 0.11973090853674732
+          "weight": 0.11973089575443932
         },
         {
           "name": "Per 90 Minutes_xG+xAG",
-          "weight": 0.11927807330366791
+          "weight": 0.11927807177461527
         }
       ]
     }
