@@ -8,16 +8,16 @@
           "weight": 0.10993675013449566
         },
         {
-          "name": "Att",
+          "name": "Total_Att",
           "weight": 0.1094314142427306
         },
         {
-          "name": "Total_Att",
-          "weight": 0.10943141424273058
+          "name": "Att",
+          "weight": 0.10943141424273056
         },
         {
           "name": "Outcomes_Cmp",
-          "weight": 0.10892864024903598
+          "weight": 0.10892864024903597
         }
       ]
     },
@@ -26,19 +26,19 @@
       "features": [
         {
           "name": "Expected_xG",
-          "weight": 0.1454867539569848
+          "weight": 0.14548675395698482
         },
         {
           "name": "Performance_Gls",
-          "weight": 0.143274785269715
+          "weight": 0.14327478526971513
         },
         {
           "name": "Standard_Gls",
-          "weight": 0.14327478526971496
+          "weight": 0.14327478526971507
         },
         {
           "name": "Expected_npxG",
-          "weight": 0.14105660395685848
+          "weight": 0.1410566039568586
         }
       ]
     }
@@ -137,7 +137,7 @@
       "features": [
         {
           "name": "Touches_Touches",
-          "weight": 0.12493162828834675
+          "weight": 0.12493162828834678
         },
         {
           "name": "Touches_Live",
@@ -145,11 +145,11 @@
         },
         {
           "name": "Receiving_Rec",
-          "weight": 0.12372097969948916
+          "weight": 0.12372097969948918
         },
         {
           "name": "Carries_Carries",
-          "weight": 0.12312617163711406
+          "weight": 0.1231261716371141
         }
       ]
     },
@@ -162,15 +162,15 @@
         },
         {
           "name": "Per 90 Minutes_npxG+xAG",
-          "weight": 0.1200141392989068
+          "weight": 0.12001413929890689
         },
         {
           "name": "Expected_npxG+xAG_per90",
-          "weight": 0.11986912068585118
+          "weight": 0.11986912068585122
         },
         {
           "name": "Per 90 Minutes_xG+xAG",
-          "weight": 0.11930000842492305
+          "weight": 0.11930000842492307
         }
       ]
     }
